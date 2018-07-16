@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Product
 {
     String product_name;
@@ -188,14 +190,57 @@ public class ShoppingCartMain
 {
 	public static void main(String[] args)
 	{
+		Scanner scan = new Scanner(System.in);
 		ShoppingCart sc = new ShoppingCart();
-		sc.addProduct("abc", 1, 2);
-		sc.addProduct("xyz", 2, 3);
-		sc.display();
-		sc.billing();
-		sc.modifyQuantity("abc", 3);
-		sc.billing();
-		sc.removeItem("abc");
-		sc.billing();
+		
+		while(true)
+		{
+			System.out.println("Enter the operation to be performed:");
+            System.out.println("1. add item");
+            System.out.println("2. remove item");
+            System.out.println("3. change quantity");
+            System.out.println("4. display all items");
+            System.out.println("5. show bill");            
+			System.out.println("6. exit");
+            int choice = scan.nextInt();
+			int price, quantity;
+			
+            switch (choice)
+			{
+				case 1:
+					System.out.println("Enter product name: ");
+					String name1 = scan.next();
+					System.out.println("Enter product quantity: ");
+					quantity = scan.nextInt();
+					System.out.println("Enter product price");
+					price = scan.nextInt();
+					sc.addProduct(name1, quantity, price);
+					break;
+				case 2:
+					System.out.println("Enter product name: ");
+					String name2 = scan.next();
+					sc.removeItem(name2);
+					break;
+				case 3:
+					System.out.println("Enter product name: ");
+					String name3 = scan.next();
+					System.out.println("Enter quantity: ");
+					quantity = scan.nextInt();
+					sc.modifyQuantity(name3, quantity);
+					break;
+				case 4:
+					sc.display();
+					break;
+				case 5:
+					sc.billing();
+					break;
+				case 6:
+					System.exit(0);
+					break;  
+				default:
+					System.out.println("Wrong Entry");
+					break;
+			}
+		}
 	}
 }
