@@ -59,7 +59,7 @@ class Product
 	
 	int getPrice()
 	{
-		return product_price;
+		return product_price; 
 	}
 }
 
