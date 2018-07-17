@@ -106,7 +106,7 @@ public class ArrayStackMain
                 
                 case 3:
                     System.out.println("Empty status = "+ as.isEmpty());
-                    break;
+                    break; 
                 
                 case 4:
                     try
