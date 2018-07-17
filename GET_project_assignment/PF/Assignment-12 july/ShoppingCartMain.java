@@ -5,7 +5,7 @@ class Product
     String product_name;
 	int product_quantity;
 	int product_price;
-    Product link;
+    Product link; 
  
     Product()
     {
