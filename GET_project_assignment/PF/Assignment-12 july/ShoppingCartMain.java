@@ -140,7 +140,7 @@ class ShoppingCart
 		{
 			if (ptr.getName() == name)
 			{
-				ptr.setQuantity(quantity);
+				ptr.setQuantity(quantity); 
 				break;
 			}				
 			ptr = ptr.getLink();
