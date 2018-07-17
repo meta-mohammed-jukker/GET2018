@@ -1,5 +1,5 @@
 import java.util.*;
-
+//product_name should be unique
 class Product
 {
     String product_name;
@@ -181,7 +181,7 @@ class ShoppingCart
 			previous_item = ptr;
 			ptr = ptr.getLink();
 		}
-		if(ptr.getLink() == null)
+		if(ptr == null)
 			System.out.println("No such item found!");
 	}
 }
