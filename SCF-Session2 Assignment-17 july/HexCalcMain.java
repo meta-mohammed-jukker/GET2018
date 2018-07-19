@@ -228,6 +228,10 @@ class HexCalc extends CalcUtil implements Calculator
             {
                 return true;
             }
+	    else if(num1.charAt(i) < num2.charAt(i))
+	    {
+	    	return false;
+	    }
         }
         
         return false;
@@ -268,6 +272,11 @@ class HexCalc extends CalcUtil implements Calculator
             {
                 return true;
             }
+	    
+	    else if(num1.charAt(i) > num2.charAt(i))
+	    {
+	    	return false;
+	    }
         }
         
         return false;
