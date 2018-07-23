@@ -12,45 +12,62 @@ public class StringOperationTest
     @Test
     public void testComparingStringWithEqualArguments()
     {
-        assertEquals(1, stringOperation.comparingString("Mohammed", "Mohammed"));
+        String expectedString1 = "Mohammed";
+        String expectedString2 = "Mohammed";
+        int expectedOutput = 1;
+        assertEquals(expectedOutput, stringOperation.comparingString(expectedString1, expectedString2));
     }
     
     @Test
     public void testComparingStringWithNotEqualArguments()
     {
-        assertEquals(0, stringOperation.comparingString("Mohammed", "Jukker"));
+        String expectedString1 = "Mohammed";
+        String expectedString2 = "Jukker";
+        int expectedOutput = 0;
+        assertEquals(expectedOutput, stringOperation.comparingString(expectedString1, expectedString2));
     }
     
     @Test
     public void testComparingStringWithCaseSensitiveArguments()
     {
-        assertEquals(0, stringOperation.comparingString("Mohammed", "mohammed"));
+        String expectedString1 = "Mohammed";
+        String expectedString2 = "mohammed";
+        int expectedOutput = 0;
+        assertEquals(expectedOutput, stringOperation.comparingString(expectedString1, expectedString2));
     }
     
     //Tests for reversingString()
     @Test
     public void testReversingString()
     {
-        assertEquals("demmahoM", stringOperation.reversingString("Mohammed"));
+        String expectedString = "Mohammed";
+        String expectedOutput = "demmahoM";
+        assertEquals(expectedOutput, stringOperation.reversingString(expectedString));
     }
     
     //Tests for changingCase()
     @Test
     public void testChangingCase()
     {
-        assertEquals("mOHAMMED29", stringOperation.changingCase("Mohammed29"));
+        String expectedString = "Mohammed29";
+        String expectedOutput = "mOHAMMED29";
+        assertEquals(expectedOutput, stringOperation.changingCase(expectedString));
     }
     
     //Tests for largestWord()
     @Test
     public void testlargestWord()
     {
-        assertEquals("mnop", stringOperation.largestWord("abc de fghi jkl mnop"));
+        String expectedString = "abc de fghi jkl mnop";
+        String expectedOutput = "mnop";
+        assertEquals(expectedOutput, stringOperation.largestWord(expectedString));
     }
     
     @Test
     public void testlargestWordWithNoWords()
     {
-        assertEquals("", stringOperation.largestWord("   "));
+        String expectedString = "    ";
+        String expectedOutput = "";
+        assertEquals(expectedOutput, stringOperation.largestWord(expectedString));
     }
 }
