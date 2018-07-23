@@ -10,7 +10,7 @@ public class MarksheetTest
     
     //Tests calculateAverageGrade()
     @Test
-    public void testcalculateAverageGrade()
+    public void testCalculateAverageGrade()
     {
         float[] expectedInputGrades = {(float)12.5, (float)23.54, 40, (float)97.89};
         float expectedOutput = (float)43.4825;
@@ -18,7 +18,7 @@ public class MarksheetTest
     }
     
     @Test(expected = ArithmeticException.class)
-    public void testcalculateAverageGradeWithEmptyArray()
+    public void testCalculateAverageGradeWithEmptyArray()
     {
         float[] expectedInputGrades = {};
         marksheet.calculateAverageGrade(expectedInputGrades);
