@@ -12,15 +12,16 @@ public class MarksheetTest
     @Test
     public void testcalculateAverageGrade()
     {
-        float[] grades = {(float)12.5, (float)23.54, 40, (float)97.89};
-        assertEquals(43.4825, marksheet.calculateAverageGrade(grades), 0.01);
+        float[] expectedInputGrades = {(float)12.5, (float)23.54, 40, (float)97.89};
+        float expectedOutput = (float)43.4825;
+        assertEquals(expectedOutput, marksheet.calculateAverageGrade(expectedInputGrades), 0.01);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testcalculateAverageGradeWithEmptyArray()
     {
-        float[] grades = {};
-        marksheet.calculateAverageGrade(grades);
+        float[] expectedInputGrades = {};
+        marksheet.calculateAverageGrade(expectedInputGrades);
     }
     
     
@@ -28,15 +29,16 @@ public class MarksheetTest
     @Test
     public void testFindMaximumGrade()
     {
-        float[] grades = {(float)12.5, (float)23.54, 40, (float)97.89};
-        assertEquals(97.89, marksheet.findMaximumGrade(grades), 0.01);
+        float[] expectedInputGrades = {(float)12.5, (float)23.54, 40, (float)97.89};
+        float expectedOutput = (float)97.89;
+        assertEquals(expectedOutput, marksheet.findMaximumGrade(expectedInputGrades), 0.01);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testFindMaximumGradeWithEmptyArray()
     {
-        float[] grades = {};
-        marksheet.findMaximumGrade(grades);
+        float[] expectedInputGrades = {};
+        marksheet.findMaximumGrade(expectedInputGrades);
     }
     
     
@@ -44,29 +46,31 @@ public class MarksheetTest
     @Test
     public void testFindMinimumGrade()
     {
-        float[] grades = {(float)12.5, (float)23.54, 40, (float)97.89};
-        assertEquals(12.5, marksheet.findMinimumGrade(grades), 0.01);
+        float[] expectedInputGrades = {(float)12.5, (float)23.54, 40, (float)97.89};
+        float expectedOutput = (float)12.5;
+        assertEquals(expectedOutput, marksheet.findMinimumGrade(expectedInputGrades), 0.01);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testFindMinimumGradeWithEmptyArray()
     {
-        float[] grades = {};
-        marksheet.findMinimumGrade(grades);
+        float[] expectedInputGrades = {};
+        marksheet.findMinimumGrade(expectedInputGrades);
     }
     
   //Tests findPercentagePassed()
     @Test
     public void testFindPercentagePassed()
     {
-        float[] grades = {(float)12.5, (float)23.54, 40, (float)97.89};
-        assertEquals(50.0, marksheet.findPercentagePassed(grades), 0);
+        float[] expectedInputGrades = {(float)12.5, (float)23.54, 40, (float)97.89};
+        float expectedOutput = (float)50.0;
+        assertEquals(expectedOutput, marksheet.findPercentagePassed(expectedInputGrades), 0);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testFindPercentagePassedWithEmptyArray()
     {
-        float[] grades = {};
-        marksheet.findPercentagePassed(grades);
+        float[] expectedInputGrades = {};
+        marksheet.findPercentagePassed(expectedInputGrades);
     }
 }
