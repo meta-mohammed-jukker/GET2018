@@ -12,76 +12,98 @@ public class AreaTest
     @Test
     public void testAreaTriangleWithPositiveArguments()
     {
-        assertEquals(207.36, area.areaTriangle(12.00, 34.56), 0);
+        double expectedWidth = 12.00;
+        double expectedHeight = 34.56;
+        double expectedArea = 207.36;
+        assertEquals(expectedArea, area.areaTriangle(expectedWidth, expectedHeight), 0);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testAreaTriangleWithZero()
     {
-        area.areaTriangle(0, 34.56);
+        double expectedWidth = 0;
+        double expectedHeight = 34.56;
+        area.areaTriangle(expectedWidth, expectedHeight);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testAreaTriangleWithNegetiveArguments()
     {
-        area.areaTriangle(12.00, -34.56);
+        double expectedWidth = 12.00;
+        double expectedHeight = -34.56;
+        area.areaTriangle(expectedWidth, expectedHeight);
     }
     
     //Tests areaRectangle()
     @Test
     public void testAreaRectangleWithPositiveArguments()
     {
-        assertEquals(414.72, area.areaRectangle(12.00, 34.56), 0);
+        double expectedWidth = 12.00;
+        double expectedHeight = 34.56;
+        double expectedArea = 414.72;
+        assertEquals(expectedArea, area.areaRectangle(expectedWidth, expectedHeight), 0);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testAreaRectangleWithZero()
     {
-        area.areaRectangle(0, 34.56);
+        double expectedWidth = 0;
+        double expectedHeight = 34.56;
+        area.areaRectangle(expectedWidth, expectedHeight);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testAreaRectangleWithNegetiveArguments()
     {
-        area.areaRectangle(12.00, -34.56);
+        double expectedWidth = 12.00;
+        double expectedHeight = -34.56;
+        area.areaRectangle(expectedWidth, expectedHeight);
     }
     
     //Tests areaSquare()
     @Test
     public void testAreaSquareWithPositiveArguments()
     {
-        assertEquals(1194.3936, area.areaSquare(34.56), 0);
+        double expectedSide = 34.56;
+        double expectedArea = 1194.3936;
+        assertEquals(expectedArea, area.areaSquare(expectedSide), 0);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testAreaSquareWithZero()
     {
-        area.areaSquare(0);
+        double expectedSide = 0;
+        area.areaSquare(expectedSide);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testAreaSquareWithNegetiveArguments()
     {
-        area.areaSquare(-34.56);
+        double expectedSide = -34.56;
+        area.areaSquare(expectedSide);
     }
     
     //Tests areaCircle()
     @Test
     public void testAreaCircleWithPositiveArguments()
     {
-        assertEquals(40.6944, area.areaCircle(3.6), 0);
+        double expectedRadius = 3.6;
+        double expectedArea = 40.6944;
+        assertEquals(expectedArea, area.areaCircle(expectedRadius), 0);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testAreaCircleWithZero()
     {
-        area.areaCircle(0);
+        double expectedRadius = 0;
+        area.areaCircle(expectedRadius);
     }
     
     @Test(expected = ArithmeticException.class)
     public void testAreaCircleWithNegetiveArguments()
     {
-        area.areaCircle(-34.56);
+        double expectedRadius = -34.56;
+        area.areaCircle(expectedRadius);
     }
 
 }
