@@ -75,64 +75,92 @@ public class HexCalcTest
     @Test
     public void testEqualToWithPositiveTestCase()
     {
-        assertEquals(true, hexCalc.equalTo("000a", "A"));
+        boolean expectedOutput = true;
+        String expectedNumber1 = "000a";
+        String expectedNumber2 = "A";
+        assertEquals(expectedOutput, hexCalc.equalTo(expectedNumber1,expectedNumber2));
     }
     
     @Test
     public void testEqualToWithNegetiveTestCase()
     {
-        assertEquals(false, hexCalc.equalTo("0DA1", "ACD"));
+        boolean expectedOutput = false;
+        String expectedNumber1 = "0DA1";
+        String expectedNumber2 = "ACD";
+        assertEquals(expectedOutput, hexCalc.equalTo(expectedNumber1,expectedNumber2));
     }
     
     
     @Test
     public void testGreaterThanWithPositiveTestCase()
     {
-        assertEquals(true, hexCalc.greaterThan("F", "A"));
+        boolean expectedOutput = true;
+        String expectedNumber1 = "f";
+        String expectedNumber2 = "A";
+        assertEquals(expectedOutput, hexCalc.greaterThan(expectedNumber1,expectedNumber2));
     }
     
     @Test
     public void testGreaterThanWithEqualArguments()
     {
-        assertEquals(false, hexCalc.greaterThan("1", "1"));
+        boolean expectedOutput = false;
+        String expectedNumber1 = "1";
+        String expectedNumber2 = "1";
+        assertEquals(expectedOutput, hexCalc.greaterThan(expectedNumber1,expectedNumber2));
     }
     
     @Test
     public void testGreaterThanWithNumber1LessThanNumber2()
     {
-        assertEquals(false, hexCalc.greaterThan("1", "2"));
+        boolean expectedOutput = false;
+        String expectedNumber1 = "1";
+        String expectedNumber2 = "2";
+        assertEquals(expectedOutput, hexCalc.greaterThan(expectedNumber1,expectedNumber2));
     }
     
     
     @Test
     public void testLessThanWithPositiveTestCase()
     {
-        assertEquals(true, hexCalc.lessThan("1", "2"));
+        boolean expectedOutput = true;
+        String expectedNumber1 = "1";
+        String expectedNumber2 = "2";
+        assertEquals(expectedOutput, hexCalc.lessThan(expectedNumber1,expectedNumber2));
     }
     
     @Test
     public void testLessThanWithEqualArguments()
     {
-        assertEquals(false, hexCalc.lessThan("1", "1"));
+        boolean expectedOutput = false;
+        String expectedNumber1 = "1";
+        String expectedNumber2 = "1";
+        assertEquals(expectedOutput, hexCalc.lessThan(expectedNumber1,expectedNumber2));
     }
     
     @Test
     public void testLessThanWithNumber1GreaterThanNumber2()
     {
-        assertEquals(false, hexCalc.lessThan("F", "A"));
+        boolean expectedOutput = false;
+        String expectedNumber1 = "F";
+        String expectedNumber2 = "A";
+        assertEquals(expectedOutput, hexCalc.lessThan(expectedNumber1,expectedNumber2));
     }
     
     
     @Test
     public void testHexStringToDecimal()
     {
-        assertEquals(241, hexCalc.hexStringToDecimal("00F1"), 0);
+        String expectedHexadecimalString = "00F1";
+        Long expectedOutput = new Long(241);
+        assertEquals(expectedOutput, hexCalc.hexStringToDecimal(expectedHexadecimalString), 0);
     }
     
     
     @Test
     public void testDecimalToHexString()
     {
-        assertEquals("F1", hexCalc.decimalToHexString((long)241));
+        Long expectedDecimalString = new Long(241);
+        String expectedOutput = "F1";
+        assertEquals(expectedOutput, hexCalc.decimalToHexString(expectedDecimalString));
     }
 }
