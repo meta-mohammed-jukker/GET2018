@@ -77,7 +77,8 @@ public class JobSchedulerTest
                              {6, 20},
                              {60, 10},
                              {110, 5}};
-        assertEquals(1.0, jobScheduler.averageWaitingTime(processes), 0.1);
+        float expectedOutput = 1;
+        assertEquals(expectedOutput, jobScheduler.averageWaitingTime(processes), 0.1);
     }
     
     @Test
@@ -87,6 +88,7 @@ public class JobSchedulerTest
                              {6, 20},
                              {60, 10},
                              {110, 5}};
-        assertEquals(4, jobScheduler.maximumWaitingTime(processes));
+        int expectedOutput = 4;
+        assertEquals(expectedOutput, jobScheduler.maximumWaitingTime(processes));
     }
 }
