@@ -3,34 +3,51 @@ package session6;
 import java.util.*;
 public final class IntSet
 {
-    private List<Integer> array;
-    private List<Integer> universalArray;
-    
-    /**
-     * Initializes universalArray for integers 1 to 1000
-     */
-    private void setUniversalArray()
-    {
-        this.universalArray = new ArrayList<Integer>(1000);
-        for(int i=1; i<=1000; i++)
-        {
-            this.universalArray.add(i);
-        }
-    }
+    private int[] array;
     
     /**
      * Initializes array from input array
-	 * Requires: All elements should be unique
+     * Requires: All the elements should be unique and should be between 1 and 1000 
      * @param inputArray list of integers
      */
     IntSet(int[] inputArray)
     {
-        this.array = new ArrayList<Integer>(inputArray.length);
-        for(int value: inputArray)
-        {
-            this.array.add(value);
-        }
+        array = removeDuplicateAndSetRange(inputArray);
+        Arrays.sort(array);
     }
+    
+    /**
+     * Removes duplicate values and checks if value lies between 1 and 1000 
+     * @param inputArray input set given by user
+     * @return set without duplicate values and values outside range 1 to 1000
+     * @throws IndexOutOfBoundsException
+     */
+    int[] removeDuplicateAndSetRange(int[] inputArray) throws IndexOutOfBoundsException
+    {
+        if(inputArray.length == 0)
+        {
+            throw new IndexOutOfBoundsException("Array Empty");
+        }
+        Arrays.sort(inputArray);
+        int[] temporaryArray = new int[inputArray.length];
+        int temporaryArrayCounter = 1;
+        temporaryArray[0] = inputArray[0];
+        for(int i=1; i<inputArray.length; i++)
+        {
+            if(inputArray[i] >= 1 && inputArray[i] <= 1000 && inputArray[i] != inputArray[i-1])
+            {
+                temporaryArray[temporaryArrayCounter] = inputArray[i];
+                temporaryArrayCounter++;
+            }
+        }
+        int[] outputArray = new int[temporaryArrayCounter];
+        for(int i=0; i<temporaryArrayCounter; i++)
+        {
+            outputArray[i] = temporaryArray[i];
+        }
+        return outputArray;
+    }
+    
     
     /**
      * Checks if the integer is present in array or not.
@@ -39,9 +56,12 @@ public final class IntSet
      */
     boolean isMember(int x)
     {
-        if (this.array.indexOf(x) >= 0)
+        for(int i=0; i<array.length; i++)
         {
-            return true;
+            if(array[i] == x)
+            {
+                return true;
+            }
         }
         return false;
     }
@@ -52,7 +72,7 @@ public final class IntSet
      */
     int size()
     {
-        return this.array.size();
+        return this.array.length;
     }
     
     /**
@@ -62,9 +82,9 @@ public final class IntSet
      */
     boolean subSet(IntSet s)
     {
-        for(int value: s.array)
+        for(int i=0; i<s.array.length; i++)
         {
-            if(isMember(value) == false)
+            if(isMember(s.array[i]) == false)
             {
                 return false;
             }
@@ -76,12 +96,19 @@ public final class IntSet
      * Returns list of integers from 1 to 1000 except ones present in array
      * @return list of integers
      */
-    List<Integer> getComplement()
+    int[] getComplement()
     {
-        setUniversalArray();
-        List<Integer> complementedArray = this.universalArray;
-        complementedArray.removeAll(this.array);
-        return complementedArray;
+        int[] arrayComplement = new int[1000 - array.length];
+        int arrayComplementCounter = 0;
+        for(int i=1; i<=1000; i++)
+        {
+            if(! isMember(i))
+            {
+                arrayComplement[arrayComplementCounter] = i;
+                arrayComplementCounter++;
+            }
+        }
+        return arrayComplement;
     }
     
     /**
@@ -89,19 +116,62 @@ public final class IntSet
      * @param set object of class IntSet 
      * @return list of integers
      */
-    List<Integer> union(IntSet set)
+    int[] union(IntSet set)
     {
-        List<Integer> union = new ArrayList<Integer>(this.array.size() + set.array.size());
-        union = this.array;
-        for(int value: set.array)
+        int arrayCounter = 0;
+        int setArrayCounter = 0;
+        int[] temporaryUnionArray = new int[array.length + set.array.length];
+        int temporaryArrayCounter = 0;
+        
+        while(arrayCounter != array.length && setArrayCounter != set.array.length)
         {
-            if(union.indexOf(value) >= 0)
+            if(array[arrayCounter] < set.array[setArrayCounter])
             {
-                continue;
+                temporaryUnionArray[temporaryArrayCounter] = array[arrayCounter];
+                temporaryArrayCounter++;
+                arrayCounter++;
             }
-            union.add(value);
+            if(array[arrayCounter] > set.array[setArrayCounter])
+            {
+                temporaryUnionArray[temporaryArrayCounter] = set.array[setArrayCounter];
+                temporaryArrayCounter++;
+                setArrayCounter++;
+            }
+            else
+            {
+                temporaryUnionArray[temporaryArrayCounter] = array[arrayCounter];
+                temporaryArrayCounter++;
+                arrayCounter++;
+                setArrayCounter++;
+            }
         }
-        return union;
+        
+        if(arrayCounter == array.length)
+        {
+            while(setArrayCounter != set.array.length)
+            {
+                temporaryUnionArray[temporaryArrayCounter] = set.array[setArrayCounter];
+                temporaryArrayCounter++;
+                setArrayCounter++;
+            }
+        }
+        else if(setArrayCounter == set.array.length)
+        {
+            while(arrayCounter != array.length)
+            {
+                temporaryUnionArray[temporaryArrayCounter] = array[arrayCounter];
+                temporaryArrayCounter++;
+                arrayCounter++;
+            }
+        }
+        
+        int[] unionArray = new int[temporaryArrayCounter];
+        for(int i=0; i<temporaryArrayCounter; i++)
+        {
+            unionArray[i] = temporaryUnionArray[i];
+        }
+        
+        return unionArray;
     }
     
     
