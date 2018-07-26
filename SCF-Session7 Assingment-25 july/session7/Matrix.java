@@ -107,7 +107,7 @@ public final class Matrix
      */
     int[][] addMatrix(Matrix matrix) throws AssertionError
     {
-        //Complexity: O(n)
+        //Complexity: O(n^2)
         if(this.rows != matrix.rows || this.columns != matrix.columns)
         {
             throw new AssertionError("Matrix Dimensions don't match");
@@ -136,7 +136,7 @@ public final class Matrix
      */
     boolean isSymmetric() throws AssertionError
     {
-        //Complexity: O(n)
+        //Complexity: O(n^2)
         if(rows != columns)
         {
             throw new AssertionError("Matrix should be square matrix");
