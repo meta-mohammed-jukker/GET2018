@@ -2,9 +2,9 @@ package session7;
 
 public final class Matrix
 {
-    private int[][] matrix;
-    private int rows;
-    private int columns;
+    private final int[][] matrix;
+    private final int rows;
+    private final int columns;
     
     /**
      * Converts Matrix in presentable format into stored format(value, row, column)
