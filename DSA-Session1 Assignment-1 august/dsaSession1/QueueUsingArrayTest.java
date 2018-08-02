@@ -75,7 +75,6 @@ public class QueueUsingArrayTest
     @Test(expected = IndexOutOfBoundsException.class)
     public void testIntegerPopElementWhenStackEmpty()
     {
-        intArray.enqueueElement(12);
         int expectedOutput = 12;
         int actualOutput = intArray.dequeueElement();
         actualOutput = intArray.dequeueElement();
@@ -212,7 +211,6 @@ public class QueueUsingArrayTest
     @Test(expected = IndexOutOfBoundsException.class)
     public void testDoublePopElementWhenStackEmpty()
     {
-        doubleArray.enqueueElement(12.0);
         double expectedOutput = 12.0;
         double actualOutput = doubleArray.dequeueElement();
         actualOutput = doubleArray.dequeueElement();
