@@ -11,7 +11,7 @@ public class QueueUsingLinkedListTest
     
     //Test cases for enqueueElement()
     @Test
-    public void testIntegerPushElement()
+    public void testIntegerEnqueueElement()
     {
         boolean expectedOutput = true;
         boolean actualOutput = intLinkedList.enqueueElement(12);
@@ -31,7 +31,7 @@ public class QueueUsingLinkedListTest
     }
     
     @Test(expected = NullPointerException.class)
-    public void testIntegerPushElementWithNullElement()
+    public void testIntegerEnqueueElementWithNullElement()
     {
         boolean expectedOutput = true;
         boolean actualOutput = intLinkedList.enqueueElement(null);
@@ -40,7 +40,7 @@ public class QueueUsingLinkedListTest
     
     //Test cases for dequeueElement()
     @Test
-    public void testIntegerPopElement()
+    public void testIntegerDequeueElement()
     {
         intLinkedList.enqueueElement(12);
         int expectedOutput = 12;
@@ -49,7 +49,7 @@ public class QueueUsingLinkedListTest
     }
     
     @Test(expected = IndexOutOfBoundsException.class)
-    public void testIntegerPopElementWhenStackEmpty()
+    public void testIntegerDequeueElementWhenStackEmpty()
     {
         int expectedOutput = 12;
         int actualOutput = intLinkedList.dequeueElement();
@@ -111,7 +111,7 @@ public class QueueUsingLinkedListTest
     
     //Test cases for enqueueElement()
     @Test
-    public void testDoublePushElement()
+    public void testDoubleEnqueueElement()
     {
         boolean expectedOutput = true;
         boolean actualOutput = doubleLinkedList.enqueueElement(12.0);
@@ -131,7 +131,7 @@ public class QueueUsingLinkedListTest
     }
     
     @Test(expected = NullPointerException.class)
-    public void testDoublePushElementWithNullElement()
+    public void testDoubleEnqueueElementWithNullElement()
     {
         boolean expectedOutput = true;
         boolean actualOutput = doubleLinkedList.enqueueElement(null);
@@ -140,7 +140,7 @@ public class QueueUsingLinkedListTest
     
     //Test cases for dequeueElement()
     @Test
-    public void testDoublePopElement()
+    public void testDoubleDequeueElement()
     {
         doubleLinkedList.enqueueElement(12.8);
         double expectedOutput = 12.8;
@@ -149,7 +149,7 @@ public class QueueUsingLinkedListTest
     }
     
     @Test(expected = IndexOutOfBoundsException.class)
-    public void testDoublePopElementWhenStackEmpty()
+    public void testDoubleDequeueElementWhenStackEmpty()
     {
         double expectedOutput = 12.0;
         double actualOutput = doubleLinkedList.dequeueElement();
