@@ -75,7 +75,6 @@ public class StackUsingArrayTest
     @Test(expected = IndexOutOfBoundsException.class)
     public void testIntegerPopElementWhenStackEmpty()
     {
-        intArray.pushElement(12);
         int expectedOutput = 12;
         int actualOutput = intArray.popElement();
         actualOutput = intArray.popElement();
@@ -186,7 +185,6 @@ public class StackUsingArrayTest
     @Test(expected = IndexOutOfBoundsException.class)
     public void testDoublePopElementWhenStackEmpty()
     {
-        doubleArray.pushElement(12.0);
         double expectedOutput = 12.0;
         double actualOutput = doubleArray.popElement();
         actualOutput = doubleArray.popElement();
