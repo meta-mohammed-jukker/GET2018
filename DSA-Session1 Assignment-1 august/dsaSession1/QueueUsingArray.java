@@ -7,6 +7,10 @@ public class QueueUsingArray<E> implements Queue<E>
     private int front, rear;
     private final int MAX;
     
+    /**
+     * Initializes QueueUsingArray
+     * @param MAX
+     */
     public QueueUsingArray(int MAX)
     {
         this.queueArray = (E[])new Object[MAX];
@@ -15,6 +19,11 @@ public class QueueUsingArray<E> implements Queue<E>
         this.rear = -1;
     }
     
+
+    /**
+     * Adds element at the end (rear) of the queue.
+     * @param data  data that you want to insert in queue
+     */
     @Override
     public boolean enqueueElement(E elementToPush) throws NullPointerException, IndexOutOfBoundsException
     {
@@ -39,6 +48,11 @@ public class QueueUsingArray<E> implements Queue<E>
         return true;
     }
 
+
+    /**
+     * Removes an element from the front of the queue
+     * @return data value which is remove from queue
+     */
     @Override
     public E dequeueElement() throws IndexOutOfBoundsException
     {
@@ -61,6 +75,11 @@ public class QueueUsingArray<E> implements Queue<E>
         return dequeuedElement;             
     }
 
+
+    /**
+     * Shows an element from the front of the queue
+     * @return data value which is remove from queue
+     */
     @Override
     public E peek() throws IndexOutOfBoundsException
     {
@@ -71,12 +90,22 @@ public class QueueUsingArray<E> implements Queue<E>
         return queueArray[front];
     }
 
+
+    /**
+     * Checks whether the queue is empty or not
+     * @return boolean true if queue is empty, otherwise false
+     */
     @Override
     public boolean isEmpty()
     {
         return front == -1;
     }
 
+
+    /**
+     * Checks whether the queue is full or not
+     * @return boolean true if queue is full, otherwise false
+     */
     @Override
     public boolean isFull()
     {
