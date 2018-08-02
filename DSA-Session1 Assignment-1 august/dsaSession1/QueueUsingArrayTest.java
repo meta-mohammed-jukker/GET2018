@@ -11,7 +11,7 @@ public class QueueUsingArrayTest
     
     //Test cases for enqueueElement()
     @Test
-    public void testIntegerPushElement()
+    public void testIntegerEnqueueElement()
     {
         boolean expectedOutput = true;
         boolean actualOutput = intArray.enqueueElement(12);
@@ -31,7 +31,7 @@ public class QueueUsingArrayTest
     }
     
     @Test(expected = IndexOutOfBoundsException.class)
-    public void testIntegerPushElementWhenStackFull()
+    public void testIntegerEnqueueElementWhenStackFull()
     {
         boolean expectedOutput = true;
         boolean actualOutput = intArray.enqueueElement(12);
@@ -55,7 +55,7 @@ public class QueueUsingArrayTest
     }
     
     @Test(expected = NullPointerException.class)
-    public void testIntegerPushElementWithNullElement()
+    public void testIntegerEnqueueElementWithNullElement()
     {
         boolean expectedOutput = true;
         boolean actualOutput = intArray.enqueueElement(null);
@@ -64,7 +64,7 @@ public class QueueUsingArrayTest
     
     //Test cases for dequeueElement()
     @Test
-    public void testIntegerPopElement()
+    public void testIntegerDequeueElement()
     {
         intArray.enqueueElement(12);
         int expectedOutput = 12;
@@ -73,7 +73,7 @@ public class QueueUsingArrayTest
     }
     
     @Test(expected = IndexOutOfBoundsException.class)
-    public void testIntegerPopElementWhenStackEmpty()
+    public void testIntegerDequeueElementWhenStackEmpty()
     {
         int expectedOutput = 12;
         int actualOutput = intArray.dequeueElement();
@@ -147,7 +147,7 @@ public class QueueUsingArrayTest
     
     //Test cases for enqueueElement()
     @Test
-    public void testDoublePushElement()
+    public void testDoubleEnqueueElement()
     {
         boolean expectedOutput = true;
         boolean actualOutput = doubleArray.enqueueElement(12.0);
@@ -167,7 +167,7 @@ public class QueueUsingArrayTest
     }
     
     @Test(expected = IndexOutOfBoundsException.class)
-    public void testDoublePushElementWhenStackFull()
+    public void testDoubleEnqueueElementWhenStackFull()
     {
         boolean expectedOutput = true;
         boolean actualOutput = doubleArray.enqueueElement(12.0);
@@ -191,7 +191,7 @@ public class QueueUsingArrayTest
     }
     
     @Test(expected = NullPointerException.class)
-    public void testDoublePushElementWithNullElement()
+    public void testDoubleEnqueueElementWithNullElement()
     {
         boolean expectedOutput = true;
         boolean actualOutput = doubleArray.enqueueElement(null);
@@ -200,7 +200,7 @@ public class QueueUsingArrayTest
     
     //Test cases for dequeueElement()
     @Test
-    public void testDoublePopElement()
+    public void testDoubleDequeueElement()
     {
         doubleArray.enqueueElement(12.8);
         double expectedOutput = 12.8;
@@ -209,7 +209,7 @@ public class QueueUsingArrayTest
     }
     
     @Test(expected = IndexOutOfBoundsException.class)
-    public void testDoublePopElementWhenStackEmpty()
+    public void testDoubleDequeueElementWhenStackEmpty()
     {
         double expectedOutput = 12.0;
         double actualOutput = doubleArray.dequeueElement();
