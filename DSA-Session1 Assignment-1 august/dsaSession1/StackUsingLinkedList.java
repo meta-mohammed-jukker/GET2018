@@ -2,13 +2,13 @@ package dsaSession1;
 
 class StackUsingLinkedList<E> implements Stack<E>
 {
-    Node<E> top ;
-    int size ;
+    private Node<E> top ;
+    private int size ;
  
     /**
      * Initializes stack using linked list
      */
-    StackUsingLinkedList()
+    public StackUsingLinkedList()
     {
         top = null;
         size = 0;
@@ -30,7 +30,7 @@ class StackUsingLinkedList<E> implements Stack<E>
      * Returns size of stack
      * @return
      */
-    int getSize()
+    public int getSize()
     {
         return size;
     }    
