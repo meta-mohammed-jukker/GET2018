@@ -3,12 +3,12 @@ package dsaSession1;
 public class Node<E>
 {
     private E data;
-    Node<E> link;  
+    private Node<E> link;  
     
     /**
      * Initializes node with null values
      */
-    Node()
+    public Node()
     {
         link = null;
         data = null;
@@ -19,7 +19,7 @@ public class Node<E>
      * @param d data
      * @param nprevious node
      */
-    Node(E d,Node<E> n)
+    public Node(E d,Node<E> n)
     {
         data = d;
         link = n;
@@ -29,7 +29,7 @@ public class Node<E>
      * Sets link to previous node
      * @param n previous node 
      */
-    void setLink(Node<E> n)
+    public void setLink(Node<E> n)
     {
         link = n;
     }    
@@ -38,7 +38,7 @@ public class Node<E>
      * Sets data
      * @param d data
      */
-    void setData(E d)
+    public void setData(E d)
     {
         data = d;
     }    
@@ -47,7 +47,7 @@ public class Node<E>
      * Returns previous node
      * @return link to previous node
      */
-    Node<E> getLink()
+    public Node<E> getLink()
     {
         return link;
     }    
@@ -56,7 +56,7 @@ public class Node<E>
      * Returns data
      * @return data
      */
-    E getData()
+    public E getData()
     {
         return data;
     }
