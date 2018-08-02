@@ -14,7 +14,7 @@ public class QueueUsingLinkedList<E> implements Queue<E>
     }
     
     /**
-     * this method adds element at the end (rear) of the queue.
+     * Adds element at the end (rear) of the queue.
      * @param data  data that you want to insert in queue
      */
     @Override
@@ -39,7 +39,7 @@ public class QueueUsingLinkedList<E> implements Queue<E>
     }
     
     /**
-     * this method removes an element from the front of the queue
+     * Removes an element from the front of the queue
      * @return data value which is remove from queue
      */
     @Override
@@ -57,7 +57,7 @@ public class QueueUsingLinkedList<E> implements Queue<E>
     }
     
     /**
-     * This method checks whether the queue is full or not
+     * Checks whether the queue is full or not
      * @return boolean true if queue is full, otherwise false
      */
     @Override
@@ -67,7 +67,7 @@ public class QueueUsingLinkedList<E> implements Queue<E>
     }
     
     /**
-     * This method checks whether the queue is empty or not
+     * Checks whether the queue is empty or not
      * @return boolean true if queue is empty, otherwise false
      */
     @Override
@@ -80,6 +80,11 @@ public class QueueUsingLinkedList<E> implements Queue<E>
         return false;
     }
     
+    
+    /**
+     * Shows an element from the front of the queue
+     * @return data value which is remove from queue
+     */
     @Override
     public E peek() throws IndexOutOfBoundsException
     {
