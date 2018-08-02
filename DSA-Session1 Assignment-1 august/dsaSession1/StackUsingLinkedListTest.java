@@ -51,7 +51,6 @@ public class StackUsingLinkedListTest
     @Test(expected = IndexOutOfBoundsException.class)
     public void testIntegerPopElementWhenStackEmpty()
     {
-        intLinkedList.pushElement(12);
         int expectedOutput = 12;
         int actualOutput = intLinkedList.popElement();
         actualOutput = intLinkedList.popElement();
@@ -138,7 +137,6 @@ public class StackUsingLinkedListTest
     @Test(expected = IndexOutOfBoundsException.class)
     public void testDoublePopElementWhenStackEmpty()
     {
-        doubleLinkedList.pushElement(12.0);
         double expectedOutput = 12.0;
         double actualOutput = doubleLinkedList.popElement();
         actualOutput = doubleLinkedList.popElement();
