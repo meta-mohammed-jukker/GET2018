@@ -7,6 +7,9 @@ public class IntegerNestedList implements NestedList
 {
     private List<Object> nestedList;
     
+    /**
+     * Initializes InntegerNestedList
+     */
     public IntegerNestedList()
     {
         nestedList = new ArrayList<Object>();
@@ -85,7 +88,7 @@ public class IntegerNestedList implements NestedList
     }
     
     /**
-     * 
+     * Checks if value is present in nested list or not
      */
     @Override
     public boolean isPresent(Object object, int value) throws NestedListException 
@@ -113,6 +116,10 @@ public class IntegerNestedList implements NestedList
         return search;
     }
     
+    /**
+     * Returns nestedList
+     * @return
+     */
     public List<Object> getList() 
     {
         return nestedList;
