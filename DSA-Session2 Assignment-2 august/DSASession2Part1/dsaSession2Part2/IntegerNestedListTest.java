@@ -43,6 +43,6 @@ public class IntegerNestedListTest
     public void testIsPresentWithValueNotPresent() throws NestedListException 
     {
         boolean isPresent = integerNestedList.isPresent(integerNestedList.getList(), 200);
-        assertEquals(true, isPresent);
+        assertEquals(false, isPresent);
     }
 }
