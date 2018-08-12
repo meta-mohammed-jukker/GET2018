@@ -13,6 +13,10 @@ public class JSONNestedList
 {
     private List<Object> nestedList;
     
+    /**
+     * Initializes JSONNestedList with input .json file
+     * @param fileName
+     */
     public JSONNestedList(String fileName)
     {
         nestedList = new ArrayList<Object>();
@@ -36,6 +40,12 @@ public class JSONNestedList
         }
     }
     
+    /**
+     * Converts JSON array to list
+     * @param array JSON array
+     * @return nested list
+     * @throws NestedListException
+     */
     private List<Object> convertToList(JSONArray array) throws NestedListException 
     {
         if (array.size() == 0) 
@@ -63,6 +73,12 @@ public class JSONNestedList
         return nestedList;
     }
 
+    /**
+     * Sum of all elements in nested list
+     * @param object nested list
+     * @return sum
+     * @throws NestedListException
+     */
     public int sum(Object object) throws NestedListException
     {
         int sum = 0;
@@ -84,6 +100,12 @@ public class JSONNestedList
         return sum;
     }
 
+    /**
+     * Returns largest value presents in nested list
+     * @param object nested list
+     * @return largest value
+     * @throws NestedListException
+     */
     public int getLargestValue(Object object) throws NestedListException
     {
         int largestValue = 0;
@@ -111,6 +133,13 @@ public class JSONNestedList
         return largestValue;
     }
 
+    /**
+     * Checks if value is present in nested list or not
+     * @param object nested list 
+     * @param value value to be searched
+     * @return true if value found else false
+     * @throws NestedListException
+     */
     public boolean isPresent(Object object, int value) throws NestedListException
     {
         boolean search = false;
@@ -136,6 +165,10 @@ public class JSONNestedList
         return search;
     }
     
+    /**
+     * Returns nested list
+     * @return
+     */
     public List<Object> getList() 
     {
         return nestedList;
