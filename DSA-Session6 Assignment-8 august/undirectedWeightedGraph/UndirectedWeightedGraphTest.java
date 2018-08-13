@@ -13,18 +13,18 @@ public class UndirectedWeightedGraphTest
     @Test
     public void testIsConnetedWithAllCitiesConnected()
     {
-        UndirectedWeightedGraph uwg = new UndirectedWeightedGraph(6);
-        uwg.addEgde(0, 1, 4);
-        uwg.addEgde(0, 2, 3);
-        uwg.addEgde(1, 3, 2);
-        uwg.addEgde(1, 2, 5);
-        uwg.addEgde(2, 3, 7);
-        uwg.addEgde(3, 4, 2);
-        uwg.addEgde(4, 0, 4);
-        uwg.addEgde(4, 1, 4);
-        uwg.addEgde(4, 5, 6);
+        UndirectedWeightedGraph undirectedWeightedGraph = new UndirectedWeightedGraph(6);
+        undirectedWeightedGraph.addEgde(0, 1, 4);
+        undirectedWeightedGraph.addEgde(0, 2, 3);
+        undirectedWeightedGraph.addEgde(1, 3, 2);
+        undirectedWeightedGraph.addEgde(1, 2, 5);
+        undirectedWeightedGraph.addEgde(2, 3, 7);
+        undirectedWeightedGraph.addEgde(3, 4, 2);
+        undirectedWeightedGraph.addEgde(4, 0, 4);
+        undirectedWeightedGraph.addEgde(4, 1, 4);
+        undirectedWeightedGraph.addEgde(4, 5, 6);
         
-        boolean actualOutput = uwg.isConnected();
+        boolean actualOutput = undirectedWeightedGraph.isConnected();
         
         assertTrue(actualOutput);
     }
@@ -32,19 +32,19 @@ public class UndirectedWeightedGraphTest
     @Test
     public void testIsConnetedWithAllCitiesNotConnected()
     {
-        UndirectedWeightedGraph uwg = new UndirectedWeightedGraph(8);
-        uwg.addEgde(0, 1, 4);
-        uwg.addEgde(0, 2, 3);
-        uwg.addEgde(1, 3, 2);
-        uwg.addEgde(1, 2, 5);
-        uwg.addEgde(2, 3, 7);
-        uwg.addEgde(3, 4, 2);
-        uwg.addEgde(4, 0, 4);
-        uwg.addEgde(4, 1, 4);
-        uwg.addEgde(4, 5, 6);
-        uwg.addEgde(6, 7, 7);
+        UndirectedWeightedGraph undirectedWeightedGraph = new UndirectedWeightedGraph(8);
+        undirectedWeightedGraph.addEgde(0, 1, 4);
+        undirectedWeightedGraph.addEgde(0, 2, 3);
+        undirectedWeightedGraph.addEgde(1, 3, 2);
+        undirectedWeightedGraph.addEgde(1, 2, 5);
+        undirectedWeightedGraph.addEgde(2, 3, 7);
+        undirectedWeightedGraph.addEgde(3, 4, 2);
+        undirectedWeightedGraph.addEgde(4, 0, 4);
+        undirectedWeightedGraph.addEgde(4, 1, 4);
+        undirectedWeightedGraph.addEgde(4, 5, 6);
+        undirectedWeightedGraph.addEgde(6, 7, 7);
         
-        boolean actualOutput = uwg.isConnected();
+        boolean actualOutput = undirectedWeightedGraph.isConnected();
         
         assertFalse(actualOutput);
     }
@@ -53,20 +53,20 @@ public class UndirectedWeightedGraphTest
     @Test
     public void testReachableWithAllCitiesRechable()
     {
-        UndirectedWeightedGraph uwg = new UndirectedWeightedGraph(8);
-        uwg.addEgde(0, 1, 4);
-        uwg.addEgde(0, 2, 3);
-        uwg.addEgde(1, 3, 2);
-        uwg.addEgde(1, 2, 5);
-        uwg.addEgde(2, 3, 7);
-        uwg.addEgde(3, 4, 2);
-        uwg.addEgde(4, 0, 4);
-        uwg.addEgde(4, 1, 4);
-        uwg.addEgde(4, 5, 6);
-        uwg.addEgde(6, 7, 7);
+        UndirectedWeightedGraph undirectedWeightedGraph = new UndirectedWeightedGraph(8);
+        undirectedWeightedGraph.addEgde(0, 1, 4);
+        undirectedWeightedGraph.addEgde(0, 2, 3);
+        undirectedWeightedGraph.addEgde(1, 3, 2);
+        undirectedWeightedGraph.addEgde(1, 2, 5);
+        undirectedWeightedGraph.addEgde(2, 3, 7);
+        undirectedWeightedGraph.addEgde(3, 4, 2);
+        undirectedWeightedGraph.addEgde(4, 0, 4);
+        undirectedWeightedGraph.addEgde(4, 1, 4);
+        undirectedWeightedGraph.addEgde(4, 5, 6);
+        undirectedWeightedGraph.addEgde(6, 7, 7);
         
         Integer[] expectedOutput = {0, 1, 2, 3, 4, 5};
-        List<Integer> actualOutput = uwg.reachable(0);
+        List<Integer> actualOutput = undirectedWeightedGraph.reachable(0);
         for(int i=0; i<expectedOutput.length; i++)
         {
             assertEquals(expectedOutput[i], actualOutput.get(i));
@@ -76,17 +76,17 @@ public class UndirectedWeightedGraphTest
     @Test
     public void testReachableWithAllCitiesNotRechable()
     {
-        UndirectedWeightedGraph uwg = new UndirectedWeightedGraph(8);
-        uwg.addEgde(0, 1, 4);
-        uwg.addEgde(0, 2, 3);
-        uwg.addEgde(1, 3, 2);
-        uwg.addEgde(1, 2, 5);
-        uwg.addEgde(2, 3, 7);
-        uwg.addEgde(4, 5, 6);
-        uwg.addEgde(6, 7, 7);
+        UndirectedWeightedGraph undirectedWeightedGraph = new UndirectedWeightedGraph(8);
+        undirectedWeightedGraph.addEgde(0, 1, 4);
+        undirectedWeightedGraph.addEgde(0, 2, 3);
+        undirectedWeightedGraph.addEgde(1, 3, 2);
+        undirectedWeightedGraph.addEgde(1, 2, 5);
+        undirectedWeightedGraph.addEgde(2, 3, 7);
+        undirectedWeightedGraph.addEgde(4, 5, 6);
+        undirectedWeightedGraph.addEgde(6, 7, 7);
         
         Integer[] expectedOutput = {0, 1, 2, 3};
-        List<Integer> actualOutput = uwg.reachable(0);
+        List<Integer> actualOutput = undirectedWeightedGraph.reachable(0);
         for(int i=0; i<expectedOutput.length; i++)
         {
             assertEquals(expectedOutput[i], actualOutput.get(i));
@@ -96,16 +96,16 @@ public class UndirectedWeightedGraphTest
     @Test
     public void testGetMinimumSpanningTree()
     {
-        UndirectedWeightedGraph uwg = new UndirectedWeightedGraph(6);
-        uwg.addEgde(0, 1, 4);
-        uwg.addEgde(0, 2, 3);
-        uwg.addEgde(1, 3, 2);
-        uwg.addEgde(1, 2, 5);
-        uwg.addEgde(2, 3, 7);
-        uwg.addEgde(3, 4, 2);
-        uwg.addEgde(4, 0, 8);
-        uwg.addEgde(4, 1, 4);
-        uwg.addEgde(4, 5, 6);
+        UndirectedWeightedGraph undirectedWeightedGraph = new UndirectedWeightedGraph(6);
+        undirectedWeightedGraph.addEgde(0, 1, 4);
+        undirectedWeightedGraph.addEgde(0, 2, 3);
+        undirectedWeightedGraph.addEgde(1, 3, 2);
+        undirectedWeightedGraph.addEgde(1, 2, 5);
+        undirectedWeightedGraph.addEgde(2, 3, 7);
+        undirectedWeightedGraph.addEgde(3, 4, 2);
+        undirectedWeightedGraph.addEgde(4, 0, 8);
+        undirectedWeightedGraph.addEgde(4, 1, 4);
+        undirectedWeightedGraph.addEgde(4, 5, 6);
         
         String[] expectedOutput = {"0 1 4",
                                    "0 2 3",
@@ -113,7 +113,7 @@ public class UndirectedWeightedGraphTest
                                    "3 4 2",    
                                    "4 5 6"};   
         int i = 0;
-        for(Edge edge: uwg.getMinimumSpanningTree())
+        for(Edge edge: undirectedWeightedGraph.getMinimumSpanningTree())
         {
             String actualOutput = edge.getSource() + " " + edge.getDestination() + " " + edge.getWeight();
             assertEquals(expectedOutput[i], actualOutput);
@@ -124,23 +124,23 @@ public class UndirectedWeightedGraphTest
     @Test
     public void testGetShortestPath()
     {
-        UndirectedWeightedGraph uwg = new UndirectedWeightedGraph(6);
-        uwg.addEgde(0, 1, 4);
-        uwg.addEgde(0, 2, 3);
-        uwg.addEgde(1, 3, 2);
-        uwg.addEgde(1, 2, 5);
-        uwg.addEgde(2, 3, 7);
-        uwg.addEgde(3, 4, 2);
-        uwg.addEgde(4, 0, 8);
-        uwg.addEgde(4, 1, 4);
-        uwg.addEgde(4, 5, 6);
+        UndirectedWeightedGraph undirectedWeightedGraph = new UndirectedWeightedGraph(6);
+        undirectedWeightedGraph.addEgde(0, 1, 4);
+        undirectedWeightedGraph.addEgde(0, 2, 3);
+        undirectedWeightedGraph.addEgde(1, 3, 2);
+        undirectedWeightedGraph.addEgde(1, 2, 5);
+        undirectedWeightedGraph.addEgde(2, 3, 7);
+        undirectedWeightedGraph.addEgde(3, 4, 2);
+        undirectedWeightedGraph.addEgde(4, 0, 8);
+        undirectedWeightedGraph.addEgde(4, 1, 4);
+        undirectedWeightedGraph.addEgde(4, 5, 6);
         
         String[] expectedOutput = {"1 2 0",
                                    "2 3 7",
                                    "3 4 9",    
                                    "4 5 15"};   
         int i = 0;
-        for(Edge edge: uwg.getShortestPath(2, 5))
+        for(Edge edge: undirectedWeightedGraph.getShortestPath(2, 5))
         {
             String actualOutput = edge.getSource() + " " + edge.getDestination() + " " + edge.getWeight();
             assertEquals(expectedOutput[i], actualOutput);
@@ -151,16 +151,16 @@ public class UndirectedWeightedGraphTest
     @Test(expected = AssertionError.class)
     public void testGetShortestPathWithNoPathAvailable()
     {
-        UndirectedWeightedGraph uwg = new UndirectedWeightedGraph(6);
-        uwg.addEgde(0, 1, 4);
-        uwg.addEgde(0, 2, 3);
-        uwg.addEgde(1, 3, 2);
-        uwg.addEgde(1, 2, 5);
-        uwg.addEgde(2, 3, 7);
-        uwg.addEgde(3, 4, 2);
-        uwg.addEgde(4, 0, 8);
-        uwg.addEgde(4, 1, 4);
+        UndirectedWeightedGraph undirectedWeightedGraph = new UndirectedWeightedGraph(6);
+        undirectedWeightedGraph.addEgde(0, 1, 4);
+        undirectedWeightedGraph.addEgde(0, 2, 3);
+        undirectedWeightedGraph.addEgde(1, 3, 2);
+        undirectedWeightedGraph.addEgde(1, 2, 5);
+        undirectedWeightedGraph.addEgde(2, 3, 7);
+        undirectedWeightedGraph.addEgde(3, 4, 2);
+        undirectedWeightedGraph.addEgde(4, 0, 8);
+        undirectedWeightedGraph.addEgde(4, 1, 4);
         
-        List<Edge> shortestPath = uwg.getShortestPath(2, 5);
+        List<Edge> shortestPath = undirectedWeightedGraph.getShortestPath(2, 5);
     }
 }
