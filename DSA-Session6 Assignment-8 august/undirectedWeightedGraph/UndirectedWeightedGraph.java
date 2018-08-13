@@ -257,7 +257,7 @@ public class UndirectedWeightedGraph implements Graph
         for (int count = 0; count < totalNumberOfCities - 1; count++) 
         {
             // Pick the minimum distance vertex from the set of vertices
-            // not yet processed. u is always equal to src in first
+            // not yet processed. u is always equal to source in first
             // iteration.
             int u = getMinimumKeyIndex(distance, sptSet);
 
@@ -270,7 +270,7 @@ public class UndirectedWeightedGraph implements Graph
             // picked vertex.
 
                 // Update distance[v] only if is not in sptSet, there is an
-                // edge from u to v, and total weight of path from src to
+                // edge from u to v, and total weight of path from source to
                 // v through u is smaller than current value of distance[v]
 
                 for (Edge adjacentEdge : edges) 
