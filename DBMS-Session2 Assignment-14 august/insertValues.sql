@@ -1,7 +1,7 @@
 INSERT INTO user(emailID, password, userName, gender, type, dateOfBirth) 
 VALUES ('mohammed.jukker@storefront.com', 'mohammed', 'Mohammed Jukker', 'm', 'administrator', '2018-08-14');
 INSERT INTO user(emailID, password, userName, gender, type, dateOfBirth) 
-VALUES ('nikhil.saxena@storefront.com', 'nikhil', 'Nikhil Saxena', 'm', 'shopper', '2018-08-15');
+VALUES ('joseph.john@storefront.com', 'nikhil', 'Joseph John', 'm', 'shopper', '2018-08-15');
 
 
 INSERT INTO userAddress(userID, street, city, state, pincode)
