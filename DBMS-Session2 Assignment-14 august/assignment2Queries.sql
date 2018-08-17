@@ -23,7 +23,8 @@ SELECT c.categoryID, c.categoryName,
 IFNULL(pc.categoryName, 'Top Category') AS parentCategoryName
 FROM category AS c
 LEFT JOIN category AS pc
-ON c.parentCategoryId = pc.categoryID;
+ON c.parentCategoryId = pc.categoryID
+ORDER BY parentCategoryName, categoryID;
 
 #5
 SELECT c.categoryID, c.categoryName
