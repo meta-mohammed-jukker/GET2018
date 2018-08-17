@@ -26,11 +26,13 @@ LEFT JOIN category AS pc
 ON c.parentCategoryId = pc.categoryID;
 
 #5
-SELECT c.categoryID, c.categoryName, pc.CategoryName
+SELECT c.categoryID, c.categoryName
 FROM category AS c
-LEFT JOIN category AS pc
-ON c.parentCategoryId = pc.categoryID
-WHERE c.parentCategoryID IS NOT NULL;
+WHERE c.categoryID NOT IN (
+                            SELECT parentCategoryID 
+                            FROM category 
+                            WHERE parentCategoryID IS NOT NULL
+                          );
 
 #6
 SELECT p.productName, p.details, p.price
