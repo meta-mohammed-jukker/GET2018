@@ -31,10 +31,12 @@ AND opr.status NOT IN ('shipped', 'delivered');
 #4
 #Display list of shoppers which haven't ordered anything since last month.
 SELECT userName
-FROM orders AS o
-LEFT JOIN user AS u On o.userID = u.userID
-WHERE o.orderPlacingDate < DATE_SUB(CURDATE(), INTERVAL 1 MONTH);
-
+FROM user
+WHERE type <> 'administrator' AND userID NOT IN (
+                                                    SELECT userID
+                                                    FROM orders
+                                                    WHERE orderPlacingDate > DATE_SUB(CURDATE(), INTERVAL 1 MONTH)
+                                                );
 #5
 #Display list of shopper along with orders placed by them in last 15 days.
 SELECT u.userID, u.userName, o.orderID, p.productName, opr.numberOfProduct
