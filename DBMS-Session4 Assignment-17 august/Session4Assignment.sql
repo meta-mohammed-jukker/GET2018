@@ -93,7 +93,7 @@ BEGIN
         RETURN startDate;
                 
     ELSE
-        SET setStartDate = DATE_ADD(DATE_ADD(LAST_DAY(endDate), INTERVAL 1 DAY), INTERVAL - 1 MONTH);
+        SET setStartDate = DATE_SUB(DATE_ADD(LAST_DAY(endDate), INTERVAL 1 DAY), INTERVAL 1 MONTH);
         RETURN setStartDate;
     END IF;
 
