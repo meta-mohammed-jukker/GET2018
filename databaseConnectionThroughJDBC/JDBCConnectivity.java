@@ -6,6 +6,13 @@ import java.sql.SQLException;
 
 public class JDBCConnectivity
 {
+    /**
+     * Creates connection to MySQL database 
+     * @param userName username
+     * @param password password
+     * @param database database name
+     * @return
+     */
     public static Connection getMysqlConnection(String userName, String password, String database) 
     {
         Connection connection = null;
