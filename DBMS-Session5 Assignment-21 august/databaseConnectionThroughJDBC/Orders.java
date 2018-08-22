@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Orders
 {
-    int id;
-    Date orderPlacingDate;
-    float total;
+    private int id;
+    private Date orderPlacingDate;
+    private float total;
     
     public Orders(int id, Date orderPlacingDate, float total)
     {
