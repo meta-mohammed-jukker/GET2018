@@ -2,10 +2,10 @@ package databaseConnectionThroughJDBC;
 
 public class ProductImage
 {
-    int id;
-    int productID;
-    String imageLocation;
-    String alternateName;
+    private int id;
+    private int productID;
+    private String imageLocation;
+    private String alternateName;
     
     public ProductImage(int id, int productID, String imageLocation, String alternateName)
     {
