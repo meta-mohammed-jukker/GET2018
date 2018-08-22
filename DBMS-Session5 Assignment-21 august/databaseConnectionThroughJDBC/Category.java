@@ -2,9 +2,9 @@ package databaseConnectionThroughJDBC;
 
 public class Category
 {
-    int id;
-    String name;
-    int subCategoryCount;
+    private int id;
+    private String name;
+    private int subCategoryCount;
     
     public Category(int id, String name, int subCategoryCount)
     {
