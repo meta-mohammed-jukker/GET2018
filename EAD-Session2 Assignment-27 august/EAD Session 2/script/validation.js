@@ -84,6 +84,7 @@ function validateName(name)
 	var i;
 	for(i=0; i<upperName.length; i++)
 	{
+		// if character is not alphabet or blank space then return false
 		if((upperName.charCodeAt(i) < 65 || upperName.charCodeAt(i) > 90) && upperName.charCodeAt(i) != 32)
 		{
 			validationResponse(false, name);
@@ -148,21 +149,25 @@ function validatePassword(passwordObject, incorrectPassword)
 	var i;
 	for(i=0; i<password.length; i++)
 	{
+		//check for upper case
 		if(password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90)
 		{
 			checkUpperAlphabet = true;
 			//alert("upper");
 		}
+		//check for lower case
 		if(password.charCodeAt(i) >= 97 && password.charCodeAt(i) <= 122)
 		{
 			checkLowerAlphabet = true;
 			//alert("lower");
 		}
+		//check for number
 		if(password.charCodeAt(i) >= 48 && password.charCodeAt(i) <= 57)
 		{
 			checkNumber = true;
 			//alert("number");
 		}
+		//check for special case characters
 		if((password.charCodeAt(i) >= 33 && password.charCodeAt(i) <= 47) || 
 		   (password.charCodeAt(i) >= 58 && password.charCodeAt(i) <= 64) || 
 		   (password.charCodeAt(i) >= 91 && password.charCodeAt(i) <= 96) || 
