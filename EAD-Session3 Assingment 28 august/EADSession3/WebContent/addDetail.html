@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Employee Details</title>
+</head>
+<body>
+	<h1 align="center">Add Employee Details</h1>
+	<div align="center">
+		<form name="addDetailsForm" method="post" action="AddDetailServlet" >
+			<table>
+				<tr>
+					<td>
+						First Name:
+					</td>
+					<td>
+						<input type="text" name="firstName" placeholder="First Name" />
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+						Last Name:
+					</td>
+					<td>
+						<input type="text" name="lastName" placeholder="Last Name" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Email:
+					</td>
+					<td>
+						<input id="email" type="email" name="email" placeholder="Email" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Age:
+					</td>
+					<td>
+						<input type="number" name="age" placeholder="Age" />
+					</td>
+				</tr>
+					
+				<tr>
+					<td>
+						<input type="submit" value="submit">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
