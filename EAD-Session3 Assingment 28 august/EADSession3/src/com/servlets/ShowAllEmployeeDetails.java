@@ -57,9 +57,9 @@ public class ShowAllEmployeeDetails extends HttpServlet
                     out.print("<td>");
                         out.print("<form name=\"editEmployeeForm\" method=\"post\" action=\"UpdateEmployeeServlet\" >");
                             out.print("<input type=\"hidden\" id=\"employeeID\" " + 
-                                    "name=\"employeeID\" value=\"" + employee.getId() + "\" >");
+                                      "name=\"employeeID\" value=\"" + employee.getId() + "\" >");
                             out.print("<input type=\"submit\" id=\"editEmployee\" " + 
-                                    "name=\"editEmployee\" value=\"edit\" >");
+                                      "name=\"editEmployee\" value=\"edit\" >");
                         out.print("</form>");
                     out.print("</td>");
                 out.print("</tr>");
