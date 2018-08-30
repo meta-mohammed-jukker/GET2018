@@ -3,18 +3,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Employee Details</title>
+<script src="scripts/validation.js">
+</script>
 </head>
 <body>
 	<h1 align="center">Add Employee Details</h1>
 	<div align="center">
-		<form name="addDetailsForm" method="post" action="AddDetailServlet" >
+		<form name="addDetailsForm" method="post" 
+		action="AddDetailServlet" onsubmit="return validateAddDetailsForm()" >
 			<table>
 				<tr>
 					<td>
 						First Name:
 					</td>
 					<td>
-						<input type="text" name="firstName" placeholder="First Name" />
+						<input type="text" name="firstName" placeholder="First Name" onfocusout="validateName(this)" />
 					</td>
 				</tr>
 			
@@ -23,7 +26,7 @@
 						Last Name:
 					</td>
 					<td>
-						<input type="text" name="lastName" placeholder="Last Name" />
+						<input type="text" name="lastName" placeholder="Last Name" onfocusout="validateName(this)" />
 					</td>
 				</tr>
 				
@@ -32,7 +35,7 @@
 						Email:
 					</td>
 					<td>
-						<input id="email" type="email" name="email" placeholder="Email" />
+						<input id="email" type="email" name="email" placeholder="Email" onfocusout="validateEmail(this)" />
 					</td>
 				</tr>
 				
@@ -41,7 +44,7 @@
 						Age:
 					</td>
 					<td>
-						<input type="number" name="age" placeholder="Age" />
+						<input type="number" name="age" placeholder="Age" onfocusout="validateAge(this)" />
 					</td>
 				</tr>
 					
