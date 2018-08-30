@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,7 +36,18 @@ public class SearchEmployeeServlet extends HttpServlet
 	        System.out.println(e.getId());
 	    }
 	    */
+	    
 	    PrintWriter out = response.getWriter();
+	    
+	    if(employeeList.size() == 0)
+	    {
+	        out.println("<script>alert(\"No such employee found!\")</script>");
+	        RequestDispatcher requestdispatch = request
+	                .getRequestDispatcher("searchEmployee.html");
+
+	        requestdispatch.include(request, response);
+	        return;
+	    }
 	    
 	    out.print("<h1 align='center'>Searched Employee Details</h1><br>");
 	    out.print("<table align='center' cellpadding=10 cellspacing=5>");
