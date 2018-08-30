@@ -17,6 +17,11 @@ public class RunQueries
         connection = JDBCConnectivity.getMysqlConnection("root", "mohammed", "workplace");
     }
     
+    /**
+     * Adds employee details
+     * @param employee employee object
+     * @return true if details added, else false
+     */
     public boolean addDetails(Employee employee)
     {
         int employeesAdded = 0;
@@ -55,26 +60,24 @@ public class RunQueries
         return false;
     }
     
+    /**
+     * Searches all employee with given name
+     * @param name employee name
+     * @return list of employees
+     */
     public List<Employee> searchEmployee(String name)
     {
         List<Employee> employeeList = new ArrayList<Employee>();
-        /*
-        String query = "SELECT employeeID, firstName, lastName, emailID, age " +
-                "FROM employee " +
-                "WHERE firstName like '%(?)%' OR lastName like '%(?)%'";
-        */
-        String query = "SELECT employeeID, firstName, lastName, emailID, age " +
-                       "FROM employee " +
-                       "WHERE firstName like '%" + name + "%' OR lastName like '%" + name + "%'";
-                       
+        
+        String query = Queries.searchEmployee;           
         
         try
         (
             PreparedStatement preparedStatement = connection.prepareStatement(query);
         )
         {   
-            //preparedStatement.setString(1, name);
-            //preparedStatement.setString(2, name);
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, name);
             
             ResultSet resultSet = preparedStatement.executeQuery();
             
@@ -108,6 +111,10 @@ public class RunQueries
         return employeeList;
     }
     
+    /**
+     * Returns list of all employee details
+     * @return list of all employee
+     */
     public List<Employee> showAllEmployeeDetails()
     {
         List<Employee> employeeList = new ArrayList<Employee>();
@@ -149,44 +156,10 @@ public class RunQueries
         }
         return employeeList;
     }
-    /*
-    public boolean updateFirstName(String firstName, int employeeID)
-    {
-        int isEmployeeUpdated = 0;
-        
-        String query = "UPDATE employee " + 
-                       "SET firstName = " + firstName +
-                       " WHERE productID = " + employeeID + ";";
-        
-        try
-        (
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-        )
-        {
-            isEmployeeUpdated = preparedStatement.executeUpdate();
-        } 
-        catch (SQLException sqlException)
-        {
-            sqlException.printStackTrace();
-            System.exit(1);
-        }
-        catch (Exception exception)
-        {
-            exception.printStackTrace();
-            System.exit(2);
-        }
-        finally
-        {
-            dispose();
-        }
-
-        if(isEmployeeUpdated > 0)
-        {
-            return true;
-        }
-        return false;
-    }
-    */
+    
+    /**
+     * Closes connection
+     */
     public void dispose()
     {
         try
