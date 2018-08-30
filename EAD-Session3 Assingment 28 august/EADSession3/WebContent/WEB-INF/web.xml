@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.4">
   <servlet>
     <servlet-name>AddDetailServlet</servlet-name>
@@ -8,7 +8,6 @@
     <servlet-name>AddDetailServlet</servlet-name>
     <url-pattern>/AddDetailServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>SearchEmployeeServlet</servlet-name>
     <servlet-class>com.servlets.SearchEmployeeServlet</servlet-class>
@@ -17,7 +16,6 @@
     <servlet-name>SearchEmployeeServlet</servlet-name>
     <url-pattern>/SearchEmployeeServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ShowAllEmployeeDetails</servlet-name>
     <servlet-class>com.servlets.ShowAllEmployeeDetails</servlet-class>
@@ -25,5 +23,21 @@
   <servlet-mapping>
     <servlet-name>ShowAllEmployeeDetails</servlet-name>
     <url-pattern>/ShowAllEmployeeDetails</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UpdateEmployeeServlet</servlet-name>
+    <servlet-class>com.servlets.UpdateEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateEmployeeServlet</servlet-name>
+    <url-pattern>/UpdateEmployeeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SetUpdatedDetails</servlet-name>
+    <servlet-class>com.servlets.SetUpdatedDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetUpdatedDetails</servlet-name>
+    <url-pattern>/SetUpdatedDetails</url-pattern>
   </servlet-mapping>
 </web-app>
