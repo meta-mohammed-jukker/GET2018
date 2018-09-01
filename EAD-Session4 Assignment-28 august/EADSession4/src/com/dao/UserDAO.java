@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.model.UserPOJO;
 
@@ -175,14 +177,6 @@ public class UserDAO
             preparedStatement.setString(5, user.getContactNumber());
             preparedStatement.setString(6, user.getOrganization());
             preparedStatement.setString(7, user.getEmail());
-
-            System.out.println(user.getFirstName());
-            System.out.println(user.getLastName());
-            System.out.println(user.getAge());
-            System.out.println(user.getDateOfBirth());
-            System.out.println(user.getContactNumber());
-            System.out.println(user.getOrganization());
-            System.out.println(user.getEmail());
             
             userUpdated = preparedStatement.executeUpdate();
         } 
@@ -202,6 +196,92 @@ public class UserDAO
             return true;
         }
         return false;
+    }
+    
+    /**
+     * Returns list of all users belonging to a particular organization 
+     * @param organization
+     * @return
+     */
+    public List<UserPOJO> getFriendList(String organization)
+    {
+        List<UserPOJO> friendList  = new ArrayList<UserPOJO>();
+        String query = Queries.getFriendList;
+        
+        try
+        (
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+        )
+        {
+            preparedStatement.setString(1, organization);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+            while(resultSet.next())
+            {
+                String email = resultSet.getString("email");
+                String firstName = resultSet.getString("firstName");
+                String lastName = resultSet.getString("lastName");
+                
+                UserPOJO user = new UserPOJO();
+                user.setEmail(email);
+                user.setFirstName(firstName);
+                user.setLastName(lastName);
+                
+                friendList.add(user);
+            }
+            resultSet.close();
+        } 
+        catch (SQLException sqlException)
+        {
+            sqlException.printStackTrace();
+            System.exit(1);
+        }
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+            System.exit(2);
+        }
+        return friendList;
+    }
+    
+    /**
+     * Change image path
+     * @param user
+     * @return
+     */
+    public boolean changeImageURL(UserPOJO user)
+    {
+
+        int userUpdated = 0;
+        String query = Queries.changeImageUrl;
+        
+        try
+        (
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+        )
+        {   
+            preparedStatement.setString(1, user.getImageURL());
+            preparedStatement.setString(2, user.getEmail());
+            
+            userUpdated = preparedStatement.executeUpdate();
+        } 
+        catch (SQLException sqlException)
+        {
+            sqlException.printStackTrace();
+            System.exit(1);
+        }
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+            System.exit(2);
+        }
+        
+        if(userUpdated > 0)
+        {
+            return true;
+        }
+        return false;
+        
     }
     
     /**
