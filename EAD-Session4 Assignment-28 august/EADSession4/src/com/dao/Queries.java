@@ -25,4 +25,12 @@ public class Queries
                                                 "contactNumber = ?, " +
                                                 "organization = ? " +
                                             "WHERE email = ? ;"; 
+    
+    public static final String getFriendList = "SELECT email, firstName, lastName " + 
+                                               "FROM user " + 
+                                               "WHERE organization = ?;";
+    
+    public static final String changeImageUrl = "Update user " + 
+                                                "SET userImageURL = ? " +
+                                                "WHERE email = ? ;";
 }
