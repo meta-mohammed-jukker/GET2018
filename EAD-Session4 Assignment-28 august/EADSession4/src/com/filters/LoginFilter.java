@@ -11,6 +11,9 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.facade.Validation;
 
@@ -28,27 +31,25 @@ public class LoginFilter implements Filter
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) 
 	        throws IOException, ServletException 
-	{
-	    String email = request.getParameter("email");
+	{	    
+	    String email = request.getParameter("email").trim();
 	    String password = request.getParameter("password");
-	    
-	    Validation validate = new Validation();
         
-        if(!(validate.isEmailAlreadyPresent(email)))
+        if(email.length() == 0 || password.length() == 0)
         {
             PrintWriter out = response.getWriter();
-            out.println("<script>alert(\"Email not registered!\")</script>");
+            if(email.length() == 0)
+            {
+                out.println("<script>alert(\"Email not entered!\")</script>");
+            }
+            if(password.length() == 0)
+            {
+                out.println("<script>alert(\"Password not entered!\")</script>");
+            }
             RequestDispatcher requestdispatch = request
                     .getRequestDispatcher("login.html");
 
             requestdispatch.include(request, response);
-        }
-        if(!(validate.isPasswordMatched(email, password)))
-        {
-            PrintWriter out = response.getWriter();
-            out.println("<script>alert(\"Incorrect Password!\")</script>");
-            RequestDispatcher requestdispatch = request
-                    .getRequestDispatcher("login.html");
         }
         else
         {
