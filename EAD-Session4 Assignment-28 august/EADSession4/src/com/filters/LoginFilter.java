@@ -31,31 +31,15 @@ public class LoginFilter implements Filter
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) 
 	        throws IOException, ServletException 
-	{	    
-	    String email = request.getParameter("email").trim();
-	    String password = request.getParameter("password");
+	{
+	    HttpServletRequest httpRequest = (HttpServletRequest) request;
+	    
+	    String email = request.getParameter("email");
+	    
+	    HttpSession session=httpRequest.getSession(); 
+        session.setAttribute("email",email);
+        chain.doFilter(request, response);
         
-        if(email.length() == 0 || password.length() == 0)
-        {
-            PrintWriter out = response.getWriter();
-            if(email.length() == 0)
-            {
-                out.println("<script>alert(\"Email not entered!\")</script>");
-            }
-            if(password.length() == 0)
-            {
-                out.println("<script>alert(\"Password not entered!\")</script>");
-            }
-            RequestDispatcher requestdispatch = request
-                    .getRequestDispatcher("login.html");
-
-            requestdispatch.include(request, response);
-        }
-        else
-        {
-            chain.doFilter(request, response);
-        }
-		
 	}
 
 	/**
