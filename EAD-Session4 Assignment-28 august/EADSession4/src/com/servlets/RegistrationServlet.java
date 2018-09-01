@@ -36,14 +36,13 @@ public class RegistrationServlet extends HttpServlet
         try
         {
             dateOfBirth = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("dob"));
-            System.out.println(dateOfBirth);
         }        
         catch(java.text.ParseException pe)
         {
             pe.printStackTrace();
             System.exit(1);
         }
-        String contactNumber = request.getParameter("age");
+        String contactNumber = request.getParameter("contactNumber");
         String organization = request.getParameter("organization");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
