@@ -40,6 +40,38 @@
     <servlet-name>SetDetails</servlet-name>
     <url-pattern>/SetDetails</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ImageUpdationServlet</servlet-name>
+    <servlet-class>com.servlets.ImageUpdationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageUpdationServlet</servlet-name>
+    <url-pattern>/ImageUpdationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FriendsServlet</servlet-name>
+    <servlet-class>com.servlets.FriendsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FriendsServlet</servlet-name>
+    <url-pattern>/FriendsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GetFriendDetailsServlet</servlet-name>
+    <servlet-class>com.servlets.GetFriendDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetFriendDetailsServlet</servlet-name>
+    <url-pattern>/GetFriendDetailsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SetImageServlet</servlet-name>
+    <servlet-class>com.servlets.SetImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetImageServlet</servlet-name>
+    <url-pattern>/SetImageServlet</url-pattern>
+  </servlet-mapping>
   <filter>
     <filter-name>LoginFilter</filter-name>
     <filter-class>com.filters.LoginFilter</filter-class>
