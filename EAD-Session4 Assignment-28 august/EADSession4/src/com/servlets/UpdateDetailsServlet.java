@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.dao.UserDAO;
+import com.facade.UserFacade;
 import com.model.UserPOJO;
 
 /**
@@ -25,8 +26,8 @@ public class UpdateDetailsServlet extends HttpServlet
 	    
 	    String email = (String) session.getAttribute("email");
 	    
-	    UserDAO userOperation = new UserDAO();
-	    UserPOJO user = userOperation.getUserDetails(email);
+	    UserFacade userFacade = new UserFacade();
+	    UserPOJO user = userFacade.getDetails(email);
 	    
 	    PrintWriter out = response.getWriter();
 	    
@@ -36,7 +37,8 @@ public class UpdateDetailsServlet extends HttpServlet
                     out.print("<img src='images/html5Logo.png' alt='HTML 5 image' height='50px'/>");
                 out.print("</td>");
                 out.print("<td align='right'>");
-                    out.print(user.getFirstName() + " " + user.getLastName() + "  ");
+                    out.print("<a href='LoginServlet'>" + user.getFirstName() + " " + user.getLastName() + "</a>  ");
+                    out.print("<a href='FriendsServlet'>Friends</a>");
                     out.print("<a href='LogoutServlet'>Logout</a>");
                     out.print("  <a href='#'> <img src='" + user.getImageURL() + "' alt='user icon' height='50px'/> </a>");
                 out.print("</td>");
