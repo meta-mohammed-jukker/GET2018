@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.dao.UserDAO;
+import com.facade.UserFacade;
 import com.facade.Validation;
 import com.model.UserPOJO;
 
@@ -56,13 +57,13 @@ public class LoginServlet extends HttpServlet
 	    } 
         
         PrintWriter out = response.getWriter();
-        UserDAO userOperation = new UserDAO();
-        UserPOJO user = userOperation.getUserDetails((String)session.getAttribute("email"));
+        UserFacade userFacade = new UserFacade();
+        UserPOJO user = userFacade.getDetails((String) session.getAttribute("email"));
         
         out.print("<table width='75%' align='center'>");
             out.print("<tr>");
                 out.print("<td>");
-                    out.print("<img src='images/html5Logo.png' alt='HTML 5 image' height='50px'/>");
+                    out.print("<a><img src='images/html5Logo.png' alt='HTML 5 image' height='50px'/></a>");
                 out.print("</td>");
                 out.print("<td align='right'>");
                     out.print("     " + user.getFirstName() + " " + user.getLastName() + "  ");
@@ -133,6 +134,15 @@ public class LoginServlet extends HttpServlet
         out.print("<form align='center' action='UpdateDetailsServlet'>");
             out.print("<input type='submit' value='Update Details'>");
         out.print("<form>");
+        out.print("");
+        out.print("");
+        out.print("");
+        out.print("");
+        out.print("");
+        out.print("");
+        out.print("");
+        out.print("");
+        out.print("");
 	    }
 	}
 
