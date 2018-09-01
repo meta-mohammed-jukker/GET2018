@@ -5,6 +5,11 @@ import com.model.UserPOJO;
 
 public class UserFacade
 {
+    /**
+     * Registers user
+     * @param user
+     * @return
+     */
     public boolean registerUser(UserPOJO user)
     {
         Validation validate = new Validation();
@@ -14,7 +19,7 @@ public class UserFacade
             return false;
         }
         
-        user.setImageURL("images/html5Logo.png");
+        user.setImageURL("images/userIcon.png");
         
         UserDAO userRegister = new UserDAO();
         if(!(userRegister.addDataToUser(user)))
