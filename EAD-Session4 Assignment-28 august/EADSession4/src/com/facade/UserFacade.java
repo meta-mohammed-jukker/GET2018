@@ -36,4 +36,16 @@ public class UserFacade
         return true;
         
     }
+    
+    /**
+     * Return user details
+     * @param email
+     * @return
+     */
+    public UserPOJO getDetails(String email)
+    {
+        UserDAO userOperation = new UserDAO();
+        
+        return userOperation.getUserDetails(email);
+    }
 }
