@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registration</title>
+<title>Login</title>
 <script src="scripts/validation.js">
 </script>
 </head>
@@ -13,76 +13,16 @@
 				<img src="images/html5Logo.png" alt="HTML 5 image" width="50px"/></td>
 				<td align="right">
 					<a href="index.html" >Home</a>
-					<a href="login.html" >Login</a>
+					<a href="registration.html" >Register</a>
 				</td> 
 			</tr>
 	</table>
 	<hr/>
 	<div align="center">
-		<h1>Register</h1>
-		
-		<form name="registrationForm" method="post" action="RegistrationServlet" >
-			<table cellpadding=5 cellspacing=5>
-				<tr>
-					<td width="100px">
-						First Name:
-					</td>
-					<td>
-						<input type="text" name="firstName" placeholder="First Name" />
-					</td>
-				</tr>
+		<h1>Login</h1>
 			
-				<tr>
-					<td width="100px">
-						Last Name:
-					</td>
-					<td>
-						<input type="text" name="lastName" placeholder="Last Name" />
-					</td>
-				</tr>
-				
-				<tr>
-					<td>
-						Age:
-					</td>
-					<td>
-						<input type="number" name="age" placeholder="Age" />
-					</td>
-				</tr>
-				
-				<tr>
-					<td>
-						Date of Birth:
-					</td>
-					<td>
-						<input type="date" name="dob" placeholder="Date of Birth" />
-					</td>
-				</tr>
-				
-				<tr>
-					<td width="100px">
-						Contact Number:
-					</td>
-					<td>
-						<input type="number" name="contactNumber" placeholder="Contact Number" />
-					</td>
-				</tr>
-				
-				<tr>
-					<td width="100px">
-						Organization:
-					</td>
-					<td>
-						<select id="organization" name="organization">
-							<option>Metacube</option>
-							<option>TCS</option>
-							<option>Infosys</option>
-							<option>Cognizant</option>
-							<option>Apple</option>
-						</select>
-					</td>
-				</tr>
-				
+		<form name="loginForm" method="post" action="LoginServlet" >
+			<table>
 				<tr>
 					<td width="100px">
 						Email:
@@ -96,23 +36,17 @@
 					<td width="100px">
 						Password:
 					</td>
-					<td width="100px">
+					<td>
 						<input id="password" type="password" name="password" placeholder="Password" />
 					</td>
 				</tr>
 				
 				<tr>
 					<td width="100px">
-						Confirm Password:
-					</td>
-				<td>
-						<input id="confirmPassword" type="password" name="confirmPassword" placeholder='Password' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td width="100px">
 						<input type="submit" value="submit">
+					</td>
+					<td align="right">
+						<a href="#">Forgot Password</a>
 					</td>
 				</tr>
 			</table>
