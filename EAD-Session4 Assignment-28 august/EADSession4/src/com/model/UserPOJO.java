@@ -26,6 +26,7 @@ public class UserPOJO
         this.email = null;
         this.password = null;
         this.organization = null;
+        this.imageURL = null;
     }
     
     public UserPOJO(String firstName, String lastName, int age, 
@@ -44,7 +45,7 @@ public class UserPOJO
     
     public UserPOJO(int id, String firstName, String lastName, int age, 
             Date dateOfBirth, String contactNumber, String organization,  
-            String email, String password)
+            String imageURL, String email, String password)
     {
         this.id = id;
         this.firstName = firstName;
@@ -55,6 +56,7 @@ public class UserPOJO
         this.email = email;
         this.password = password;
         this.organization = organization;
+        this.imageURL = imageURL;
     }
 
     public int getId()
