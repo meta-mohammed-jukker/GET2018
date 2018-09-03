@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -25,8 +26,12 @@ private CategoryFacade categoryFacade = new CategoryFacade();
     @GET
     @Path("/getCategory")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAllCategories() 
+    public String getAllCategories(@HeaderParam("Authorization") String authorizationString) 
     {
+        if(!"GET-2018".equals(authorizationString))
+        {
+            return "Error: Unauthorized Access";
+        }
         List<Category> categoryList = categoryFacade.getAll();
         Gson gson = new Gson();
         String categoryJson = gson.toJson(categoryList);
@@ -37,8 +42,12 @@ private CategoryFacade categoryFacade = new CategoryFacade();
     @Path("/addCategory")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public boolean addCategory(String categoryInput)
+    public boolean addCategory(String categoryInput, @HeaderParam("Authorization") String authorizationString)
     {
+        if(!"GET-2018".equals(authorizationString))
+        {
+            return false;
+        }
         Gson g = new Gson();
         Category category = g.fromJson(categoryInput, Category.class);
         return categoryFacade.add(category);
@@ -48,8 +57,12 @@ private CategoryFacade categoryFacade = new CategoryFacade();
     @Path("/deleteCategory")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
-    public boolean deleteCategory(String categoryID)
+    public boolean deleteCategory(String categoryID, @HeaderParam("Authorization") String authorizationString)
     {
+        if(!"GET-2018".equals(authorizationString))
+        {
+            return false;
+        }
         int id = Integer.parseInt(categoryID);
         return categoryFacade.delete(id);
     }
@@ -58,8 +71,12 @@ private CategoryFacade categoryFacade = new CategoryFacade();
     @Path("/updateCategory")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
-    public boolean updateCategory(String categoryNames)
+    public boolean updateCategory(String categoryNames, @HeaderParam("Authorization") String authorizationString)
     {
+        if(!"GET-2018".equals(authorizationString))
+        {
+            return false;
+        }
         String[] categoryName = categoryNames.split(" to ");
         return categoryFacade.updateName(categoryName[0], categoryName[1]);
     }
