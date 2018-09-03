@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -25,8 +26,12 @@ public class AdvertisementResource
     @GET
     @Path("/getAdvertisment")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAllAdvertisement() 
+    public String getAllAdvertisement(@HeaderParam("Authorization") String authorizationString) 
     {
+        if(!"GET-2018".equals(authorizationString))
+        {
+            return "Error: Unauthorized Access";
+        }
         List<Advertisement> advertismentList = advertisementFacade.getAll();
         Gson gson = new Gson();
         String advertismnetJson = gson.toJson(advertismentList);
@@ -36,8 +41,12 @@ public class AdvertisementResource
     @GET
     @Path("/getAdvertismentByCategory/{categoryID}")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAllAdvertisementsByCategory(@PathParam("id") String categoryID) 
+    public String getAllAdvertisementsByCategory(@PathParam("id") String categoryID, @HeaderParam("Authorization") String authorizationString) 
     {
+        if(!"GET-2018".equals(authorizationString))
+        {
+            return "Error: Unauthorized Access";
+        }
         int id = Integer.parseInt(categoryID);
         List<Advertisement> advertismentList = 
                 advertisementFacade.getAllAdvertisementsByCategoryID(id);
@@ -50,8 +59,12 @@ public class AdvertisementResource
     @Path("/addAdvertisement")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public boolean addAdvertisement(String advertisementInput)
+    public boolean addAdvertisement(String advertisementInput, @HeaderParam("Authorization") String authorizationString)
     {
+        if(!"GET-2018".equals(authorizationString))
+        {
+            return false;
+        }
         Gson g = new Gson();
         Advertisement advertisement = g.fromJson(advertisementInput, Advertisement.class);
         return advertisementFacade.add(advertisement);
@@ -61,8 +74,12 @@ public class AdvertisementResource
     @Path("/deleteAdvertisement")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
-    public boolean deleteAdvertisement(String advertisementID)
+    public boolean deleteAdvertisement(String advertisementID, @HeaderParam("Authorization") String authorizationString)
     {
+        if(!"GET-2018".equals(authorizationString))
+        {
+            return false;
+        }
         int id = Integer.parseInt(advertisementID);
         return advertisementFacade.delete(id);
     }
@@ -71,8 +88,12 @@ public class AdvertisementResource
     @Path("/updateAdvertisement")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
-    public boolean updateCategory(String advertisementTitles)
+    public boolean updateCategory(String advertisementTitles, @HeaderParam("Authorization") String authorizationString)
     {
+        if(!"GET-2018".equals(authorizationString))
+        {
+            return false;
+        }
         String[] advertisementTitle = advertisementTitles.split(" to ");
         return advertisementFacade.updateName(advertisementTitle[0], advertisementTitle[1]);
     }
