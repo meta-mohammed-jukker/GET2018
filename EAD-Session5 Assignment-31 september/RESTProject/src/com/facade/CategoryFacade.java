@@ -7,6 +7,9 @@ import com.model.Category;
 
 public class CategoryFacade
 {    
+    /**
+     * Adds category
+     */
     public boolean add(Category category)
     {
         CategoryDAO categoryOperations = new CategoryDAO();
@@ -15,6 +18,9 @@ public class CategoryFacade
         return isAdded;
     }
     
+    /**
+     * Returns list of all categories
+     */
     public List<Category> getAll()
     {
         CategoryDAO categoryOperations = new CategoryDAO();
@@ -23,6 +29,9 @@ public class CategoryFacade
         return categoryList;
     }
     
+    /**
+     * Update category name
+     */
     public boolean updateName(String oldCategoryName, String newCategoryName)
     {
         CategoryDAO categoryOperations = new CategoryDAO();
@@ -31,6 +40,9 @@ public class CategoryFacade
         return isUpdated;
     }
     
+    /**
+     * Deletes category
+     */
     public boolean delete(int id)
     {
         CategoryDAO categoryOperations = new CategoryDAO();
