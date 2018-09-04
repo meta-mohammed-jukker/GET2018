@@ -18,6 +18,9 @@ public class AdvertisementDAO implements BaseDAO<Advertisement>
         connection = JDBCConnectivity.getMysqlConnection("root", "mohammed", "advertisementDatabase");
     }
     
+    /**
+     * Adds advertisement
+     */
     public boolean add(Advertisement advertisement)
     {
 
@@ -53,6 +56,9 @@ public class AdvertisementDAO implements BaseDAO<Advertisement>
         return false;
     }
     
+    /**
+     * Returns list of all advertisements
+     */
     public List<Advertisement> getAll()
     {
 
@@ -91,6 +97,9 @@ public class AdvertisementDAO implements BaseDAO<Advertisement>
         return advertisementList;
     }
     
+    /**
+     * Updates advertisement name
+     */
     public boolean updateName(String oldAdvertisementTitle, String newAdvertisementTitle)
     {
 
@@ -125,6 +134,9 @@ public class AdvertisementDAO implements BaseDAO<Advertisement>
         return false;
     }
     
+    /**
+     * Deletes advertisement
+     */
     public boolean delete(int id)
     {
         int advertisementDeleted = 0;
@@ -157,11 +169,16 @@ public class AdvertisementDAO implements BaseDAO<Advertisement>
         return false;
     }
     
+    /**
+     * Returns all advertisements of a particular category
+     * @param categoryID
+     * @return
+     */
     public List<Advertisement> getAllAdvertisementsByCategoryID(int categoryID)
     {
 
         List<Advertisement> advertisementList  = new ArrayList<Advertisement>();
-        String query = Queries.getAllAdvertisement;
+        String query = Queries.getAdvertisementsByCategoryID;
         
         try
         (
