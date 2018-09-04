@@ -6,7 +6,10 @@ import com.dao.AdvertisementDAO;
 import com.model.Advertisement;
 
 public class AdvertisementFacade
-{    
+{ 
+    /**
+     * Adds advertisement
+     */
     public boolean add(Advertisement category)
     {
         AdvertisementDAO advertisementOperations = new AdvertisementDAO();
@@ -15,6 +18,9 @@ public class AdvertisementFacade
         return isAdded;
     }
     
+    /**
+     * Returns list of all advertisements
+     */
     public List<Advertisement> getAll()
     {
         AdvertisementDAO advertisementOperations = new AdvertisementDAO();
@@ -23,6 +29,9 @@ public class AdvertisementFacade
         return advertisementList;
     }
     
+    /**
+     * Updates advertisement name
+     */
     public boolean updateName(String oldAdvertisementTitle, String newAdvertisementTitle)
     {
         AdvertisementDAO advertisementOperations = new AdvertisementDAO();
@@ -31,6 +40,9 @@ public class AdvertisementFacade
         return isUpdated;
     }
     
+    /**
+     * Deletes advertisement
+     */
     public boolean delete(int id)
     {
         AdvertisementDAO advertisementOperations = new AdvertisementDAO();
@@ -39,6 +51,11 @@ public class AdvertisementFacade
         return isDeleted;
     }
     
+    /**
+     * Returns all advertisements of a particular category
+     * @param categoryID
+     * @return
+     */
     public List<Advertisement> getAllAdvertisementsByCategoryID(int categoryID)
     {
         AdvertisementDAO advertisementOperations = new AdvertisementDAO();
