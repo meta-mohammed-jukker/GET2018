@@ -18,6 +18,9 @@ public class CategoryDAO implements BaseDAO<Category>
         connection = JDBCConnectivity.getMysqlConnection("root", "mohammed", "advertisementDatabase");
     }
     
+    /**
+     * Adds category
+     */
     public boolean add(Category category)
     {
 
@@ -51,6 +54,9 @@ public class CategoryDAO implements BaseDAO<Category>
         return false;
     }
     
+    /**
+     * Returns list of all categories
+     */
     public List<Category> getAll()
     {
 
@@ -87,6 +93,9 @@ public class CategoryDAO implements BaseDAO<Category>
         return categoryList;
     }
     
+    /**
+     * Update category name
+     */
     public boolean updateName(String oldCategoryName, String newCategoryName)
     {
 
@@ -121,6 +130,9 @@ public class CategoryDAO implements BaseDAO<Category>
         return false;
     }
 
+    /**
+     * Deletes category
+     */
     public boolean delete(int id)
     {
         int categoryDeleted = 0;
