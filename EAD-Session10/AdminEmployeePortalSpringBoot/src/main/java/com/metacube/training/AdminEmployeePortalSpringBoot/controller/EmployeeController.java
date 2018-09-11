@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.metacube.training.AdminEmployeePortalSpringBoot.model.Employee;
 import com.metacube.training.AdminEmployeePortalSpringBoot.service.EmailService;
@@ -107,7 +108,7 @@ public class EmployeeController
      * @return
      */
     @RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
-    public String forgotPassword(@RequestParam(value = "email") String email)
+    public ModelAndView forgotPassword(@RequestParam(value = "email") String email, ModelAndView modelAndView)
     {
         Employee employee = employeeService.getByEmail(email);
         if (employee != null)
@@ -121,11 +122,18 @@ public class EmployeeController
                         "forgot password",
                         "Password updated!  \nNew Password: "
                                 + employee.getPassword());
+                modelAndView.addObject("message", "Email sent.");
             } catch (MessagingException me)
             {
                 System.out.println("exception occured");
             }
         }
-        return "redirect:/";
+        else
+        {
+            modelAndView.addObject("message", "Email not present!");
+            
+        }
+        modelAndView.setViewName("login");
+        return modelAndView;
     }
 }
