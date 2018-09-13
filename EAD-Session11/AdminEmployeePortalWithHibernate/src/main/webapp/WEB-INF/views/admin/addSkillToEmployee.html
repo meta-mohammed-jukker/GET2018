@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Skill To Employee</title>
+</head>
+<body>
+<form name="addSkilltoEmployeeForm" method="post" th:object="${employeeSkillMapping}"
+		th:action="@{addSkillToEmployee}">
+		<table>
+			<tr>
+				<td><input type="hidden" th:field="*{id}" th:value="*{id}" />
+				</td>
+			</tr>
+			<tr>
+				<td>Employee id:</td>
+				<td><input type="number" th:field="*{employeeId}" th:value="*{employeeId}" /></td>
+			</tr>
+			<tr>
+				<td>Skill id:</td>
+				<td><input type="number" th:field="*{skillId}" th:value="*{skillId}" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="submit" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
