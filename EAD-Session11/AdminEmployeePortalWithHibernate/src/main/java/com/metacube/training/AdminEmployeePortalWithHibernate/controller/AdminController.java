@@ -1,5 +1,7 @@
 package com.metacube.training.AdminEmployeePortalWithHibernate.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -380,6 +382,8 @@ public class AdminController
     public String addSkillToEmployee(Model model)
     {
         model.addAttribute("employeeSkillMapping", new EmployeeSkillMapping());
+        model.addAttribute("employees", employeeService.getAll());
+        model.addAttribute("skills", skillService.getAll());
         return "admin/addSkillToEmployee";
     }
 
