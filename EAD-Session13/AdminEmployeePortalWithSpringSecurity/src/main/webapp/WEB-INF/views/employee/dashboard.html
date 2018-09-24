@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Dashboard</title>
+</head>
+<body>
+	<h3>Search Employee</h3>
+	<form name="searchEmployee" method="post" th:action="@{searchEmployee}">
+		Employee Id: <input type="number" name="id" placeholder="Employee Id" />
+		<input type="submit" value="search" />
+	</form>
+
+	<h3>Search Employee in project</h3>
+	<form name="searchEmployeeInProject" method="post"
+		th:action="@{searchEmployeeInProject}">
+		Project Id: <input type="number" name="projectId"
+			placeholder="Project Id" /><br /> Employee First Name: <input
+			type="text" name="employeeFirstName"
+			placeholder="Employee First Name" /> <input type="submit"
+			value="search" />
+	</form>
+	<hr />
+	<a th:href="@{logout}">Logout</a>
+</body>
+</html>
