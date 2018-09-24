@@ -1,0 +1,76 @@
+#div1,
+#div2,
+#div3,
+#div4
+{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: absolute;
+    /*transform: 5s all ease;*/
+    /*animation-delay: 2s;*/
+    animation: move 2s infinite 10s;
+    animation-timing-function: ease;
+
+}
+
+#div1 
+{
+    left: 100px;
+    top: 100px;
+    animation-delay: -1.5s;
+    background-color: #FA5667;
+}
+
+#div2 
+{
+    left: 100px;
+    top: 200px;
+    animation-delay: -1s;
+    background-color: #7A45E5;
+}
+
+#div3 
+{
+    left: 200px;
+    top: 100px;
+    animation-delay: -0.5s;
+    background-color: #1B91F7;
+}
+
+#div4 
+{
+    left: 200px;
+    top: 200px;
+    animation-delay: 0s;
+    background-color: #FAC24C;
+}
+
+@keyframes move
+{
+    0%
+    {
+        left: 100px;
+        top: 100px;
+    } 
+    25%
+    {
+        left: 100px;
+        top: 200px;
+    }
+    50%
+    {
+        left: 200px;
+        top: 200px;
+    }
+    75% 
+    {
+        left: 200px;
+        top: 100px;
+    }
+    100%
+    {
+        left: 100px;
+        top: 100px;
+    }
+}
