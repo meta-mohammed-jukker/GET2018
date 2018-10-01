@@ -1,0 +1,93 @@
+body
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+input:invalid
+{
+ border: 2px solid red;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button 
+{ 
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   margin: 0; 
+}
+
+
+
+textarea:invalid 
+{
+ border: 2px solid red;
+}
+
+#form-container
+{
+    margin: auto;
+    background-color: gainsboro;
+    border-radius: 5px;
+}
+
+.form-entry
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.form-element
+{
+    flex-basis: 50%;
+}
+
+.title
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.form-entry-field
+{
+    text-align: left;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.icon
+{
+    background-color: darkgrey;
+    height: 100%;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 3px;
+}
+
+.input-field
+{
+    border: none;
+    height: 100%;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+#form-submit-button
+{
+    background-color: coral;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+@media (max-width: 600px) 
+{ 
+    .form-container
+    {
+        width: 100%;
+    }
+}
