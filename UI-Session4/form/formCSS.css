@@ -60,7 +60,8 @@ textarea:invalid
 
 .icon
 {
-    background-color: darkgrey;
+    /*background-color: darkgrey;*/
+    border: 1px solid darkgrey;
     height: 100%;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
