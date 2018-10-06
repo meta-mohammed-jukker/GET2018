@@ -1,0 +1,123 @@
+body
+{
+    padding: 0px;
+    margin: 0px;
+    color: slategrey;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button 
+{ 
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   margin: 0; 
+}
+
+#form-container
+{
+    margin-top: -40px;
+    background-color: gainsboro;
+    border-radius: 5px;
+    top: 0px;
+}
+
+.form-entry
+{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    
+}
+
+.form-element
+{
+    flex-basis: 50%;
+}
+
+.title
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.form-entry-field
+{
+    text-align: left;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.icon
+{
+    /*background-color: darkgrey;*/
+    border: 1px solid darkgrey;
+    /*box-sizing: border-box;*/
+    height: 100%;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 0px 5px;
+    padding-top: 3px;
+}
+
+.input-field
+{
+    border: none;
+    height: 100%;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+#form-submit-button
+{
+    background-color: coral;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+.error-message
+{
+    color: red;
+    padding: 0px 10px;
+}
+
+/**/
+
+#data
+{
+    margin: -20px;
+    background-color: gainsboro;
+    border-radius: 5px;
+    top: 0px;
+}
+
+.detail
+{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.detail > div
+{
+    flex-basis: 50%;
+}
+
+.label
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.value
+{
+    padding-left: 10px;
+}
+
+.heading
+{
+    font-weight: bold;
+}
