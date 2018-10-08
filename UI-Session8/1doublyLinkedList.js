@@ -48,7 +48,7 @@ DoublyLinkedList.prototype.remove = function(element)
 {
     var currentNode = this.head,
         position = this.search(element),
-        count = 1,
+        count = 0,
         message = 'Failure: non-existent node in this list.',
         beforeNodeToDelete = null,
         afterNodeToDelete = null,
@@ -60,7 +60,7 @@ DoublyLinkedList.prototype.remove = function(element)
     }
     else 
     {
-        if (position === 1) 
+        if (position === 0) 
         {
             this.head = currentNode.next;
 
@@ -101,7 +101,7 @@ DoublyLinkedList.prototype.remove = function(element)
 DoublyLinkedList.prototype.search = function(element) 
 {
     var current = this.head; 
-    var index = 1;
+    var index = 0;
     var flag = false;
     while (current != null) 
     { 
