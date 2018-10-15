@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Mohammed",
+      "city": "Udaipur",
+      "contact": "843658347"
+    },
+    {
+      "id": "2",
+      "name": "Sia",
+      "city": "Udaipur",
+      "contact": "74856345779"
+    },
+    {
+      "id": "3",
+      "name": "John",
+      "city": "Hyderabad",
+      "contact": "7483248389"
+    },
+    {
+      "name": "Arjita",
+      "city": "fdg",
+      "contact": "222222222",
+      "id": "1wDHrEc"
+    },
+    {
+      "city": "gdfgdfgdfg",
+      "contact": "545534534",
+      "name": "khushboo",
+      "id": "8LzdQRk"
+    },
+    {
+      "name": "Sadda",
+      "city": "asdasf",
+      "contact": "435455",
+      "id": "6i0ep1j"
+    },
+    {
+      "name": "Surbhi",
+      "city": "dddddddddd",
+      "contact": "5345435",
+      "id": "ZIxJHsD"
+    },
+    {
+      "name": "mj",
+      "contact": "4234234",
+      "city": "pata nahi",
+      "id": "HGP9ldp"
+    },
+    {
+      "name": "abc",
+      "contact": "4325442343",
+      "city": "nahi he",
+      "id": "os~5K7L"
+    }
+  ]
+}
