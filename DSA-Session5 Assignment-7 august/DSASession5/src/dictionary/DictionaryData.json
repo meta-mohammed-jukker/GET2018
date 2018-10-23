@@ -1,0 +1,24 @@
+{
+	"addData":
+	[["d", "dasd"], 
+	 ["a", "ds"], 
+	 ["c", "sdfsd"], 
+	 ["b", "fw"], 
+	 ["e", "fewfwe"] 
+	]
+	
+	"deleteData":
+	["d", 
+	 "a"
+	]
+	
+	"getValue":
+	["c"
+	]
+	
+	"sortBetween":
+	["c",
+	 "f"
+	]
+	
+}
