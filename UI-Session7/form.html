@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+
+        <link rel="stylesheet" href="formCSS.css" />
+        /
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+        <script src="formScript.js"></script>
+
+    </head>
+
+    <body>
+        <div id="form-container">
+
+            <div id="form-heading">
+                <h2>Contact Us Today!</h2>
+            </div>
+            <hr/>
+            <form id="contact-us-form" action="details.html">
+
+                <div class="form-entry">
+                    <div class="form-element title">
+                        First Name
+                    </div>
+                    <div class="form-element form-entry-field">
+                        <div class="icon"><i class="fa fa-user"></i></div>
+                        <input class="input-field" type="text" name="firstName" id="firstName" placeholder="First Name" onfocusout="validateName(this)" required />
+                    </div>
+                </div>
+
+                <div class="form-entry">
+                    <div class="form-element title">
+                        Last Name
+                    </div>
+                    <div class="form-element form-entry-field">
+                        <div class="icon"><i class="fa fa-user"></i></div>
+                        <input class="input-field" type="text" name="lastName" id="lastName" placeholder="Last Name" onfocusout="validateName(this)" required />
+                    </div>
+                </div>
+
+                <div class="form-entry">
+                    <div class="form-element title">
+                        Email
+                    </div>
+                    <div class="form-element form-entry-field">
+                        <div class="icon"><i class="fa fa-envelope"></i></div>
+                        <input class="input-field" type="email" name="email" id="email" placeholder="E-Mail Address" onfocusout="validateEmail(this)" required />
+                    </div>
+                </div>
+
+                <div class="form-entry">
+                    <div class="form-element title">
+                        Phone Number
+                    </div>
+                    <div class="form-element form-entry-field">
+                        <div class="icon"><i class="fa fa-phone"></i></div>
+                        <input class="input-field" type="number" name="phoneNumber" placeholder="Phone Number" id="phoneNumber" onfocusout="validateContactNumber(this)" />
+                    </div>
+                </div>
+
+                <div class="form-entry">
+                    <div class="form-element title">
+                        Address
+                    </div>
+                    <div class="form-element form-entry-field">
+                        <div class="icon"><i class="fa fa-home"></i></div>
+                        <input class="input-field" type="text" name="address" id="address" placeholder="Address" />
+                    </div>
+                </div>
+
+                <div class="form-entry">
+                    <div class="form-element title">
+                        City
+                    </div>
+                    <div class="form-element form-entry-field">
+                        <div class="icon"><i class="fa fa-home"></i></div>
+                        <input class="input-field" type="text" name="city" id="city" placeholder="City" />
+                    </div>
+                </div>
+
+                <div class="form-entry">
+                    <div class="form-element title">
+                        State
+                    </div>
+                    <div class="form-element form-entry-field">
+                        <div class="icon"><i class="fa fa-list"></i></div>
+                        <select class="input-field" name="State" id="state" onchange="furtherOptions.call(this, event)" required >
+                            <option selected disabled>State</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+            <div class="form-entry">
+                <div class="form-element title">
+                </div>
+                <div class="form-element form-entry-field">
+                    <button id="form-submit-button" type="submit" form="contact-us-form" value="submit" onclick="return validateSignupForm()">Send <i class="fa fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
