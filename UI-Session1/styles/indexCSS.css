@@ -1,0 +1,66 @@
+#header
+{
+    background-image: url(../images/homebg.png);
+    width: 100%;
+}
+
+#cover
+{
+    background-image: url(../images/homebg.png);
+    width: 100%;
+}
+
+body
+{
+    margin: 0;
+}
+
+ul
+{
+    display: flex;
+    list-style: none;
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+}
+
+#logoTitle
+{
+    float: left;
+    width: 10%;
+    margin-left: 10%;
+}
+
+.socialHandleLogos
+{
+    width: 25px;
+}
+
+#downloadDiv
+{
+    background-image: url(../images/downloadbg.png);
+}
+
+#perfectFeatures
+{
+    background-image: url(../images/bodybg.png);
+}
+
+#screenshots
+{
+    background-image: url(../images/bodybg.png);
+}
+
+#reviews
+{
+    background-image: url(../images/bodybg.png);
+}
+
+#footer
+{
+    background-color: darkgray;
+    width: 100%;
+}
