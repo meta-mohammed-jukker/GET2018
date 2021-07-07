@@ -1,0 +1,362 @@
+body
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+
+ul
+{
+    list-style: none;
+    text-decoration: none;
+}
+
+li
+{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+
+#header 
+{
+    background-image: url(../images/homebg.png);
+    width: 100%;
+}
+
+#header-menu,
+#footer-menu
+{
+    display: flex;
+    list-style: none;
+    width: 35%;
+    display: inline-block;
+    padding-left: 5%;
+}
+
+#header-link,
+#footer-link
+{
+    display: flex;
+    list-style: none;
+    display: inline-block;
+    width: 25%;
+    margin-left: 30px;
+}
+
+#header-logo,
+#footer-logo
+{
+    width: 25%;
+    display: inline-block;
+    margin-right: 100px; 
+}
+
+#header-logo img,
+#footer-logo img
+{
+    margin-top: 20px;
+    height="15px";
+}
+
+#logoImg
+{
+    margin-left: 150px;
+}
+
+#cover 
+{
+    background-image: url(../images/homebg.png);
+    background-size: cover;
+    width: 100%;  
+    padding-top: 40px;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: flex-start;
+}
+
+#cover-heading > a 
+{
+    margin-top: 20px;
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+    height: 35px;
+    line-height: 30px;
+    font-size: 70%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.download 
+{
+    background-color: #f9682a;
+}
+
+.fetures 
+{
+    background-color: #1440ad;
+}
+
+#cover-heading 
+{
+    width: 40%;
+    color: white;
+    /*font-family: 'Comic Sans MS';*/
+    text-align: center;
+    text-align: left;
+    padding-left: 150px;
+    padding-top: 50px;
+    font-size: 25px;
+    line-height: 20px;
+}
+
+#cover-img
+{
+    width: 50%;
+    text-align: center;
+}
+
+.features-img img 
+{
+    width: 80px;
+    margin-left: 50px
+}
+
+#perfect-features-head,
+#screenshots-header,
+#reviews-heading
+{
+    text-align: center;
+    line-height: 20px;
+    margin-top: 80px;
+}
+
+#perfect-features-head > h1,
+#screenshots-header > h1,
+#reviews-heading > h1
+{
+    color: #4876FF;
+}
+
+#perfect-features-head > p,
+#screenshots-header > p,
+#reviews-heading > p,
+#footer-bottom > p
+{
+    color: gray;
+}
+
+.features-disc 
+{
+    display: inline-block;
+}
+
+.features div 
+{
+    display: inline-block;
+}
+
+.features 
+{
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.features-disc
+{
+    text-align: justify;
+    width: 250px;
+    text-align: justify
+}
+
+#perfect-features 
+{
+    margin: auto;
+    width: 80%;
+}
+
+.perfect-features-img img
+{
+    width: 100%;
+}
+
+.perfect-features-img 
+{
+    width: 60%;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.screenshots-img 
+{
+    width: 40%;
+    text-align: center;
+}
+
+.screenshots-img > img 
+{
+    width: 50%;
+}
+
+.screenshots-text
+{
+    width: 40%;
+}
+
+#screenshots,
+#reviews-says
+{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#screenshots-when-the-clouds-1,
+#screenshots-when-the-clouds-2,
+#screenshots-when-the-rain,
+reviews-says
+{
+    margin-top: 5%;
+}
+
+#screenshots-when-the-clouds-1,
+#screenshots-when-the-clouds-2,
+#screenshots-when-the-rain 
+{
+    display: flex;
+    align-items: flex-start;
+}
+
+#screenshots-when-the-clouds-1  .screenshots-img,
+#screenshots-when-the-clouds-2  .screenshots-img,
+#screenshots-when-the-rain .screenshots-img
+{
+    display: inline-block;
+}
+
+#screenshots-when-the-clouds-1 .screenshots-text,
+#screenshots-when-the-rain .screenshots-text,
+#screenshots-when-the-clouds-2  .screenshots-text 
+{
+    margin-right: 18%;
+    text-align: justify;
+    margin-top: 100px;
+}
+
+#screenshots-when-the-clouds-2  .screenshots-text
+{
+    margin-left: 18%;
+    margin-right: 0%;
+}
+
+.screenshots-text  p 
+{
+    color: gray;
+}
+
+#how-to-download-app 
+{
+    display: flex;
+    align-items: flex-start;
+    background-size: cover;
+}
+
+.review
+{
+    display: inline-block;
+    width: 45%;
+    margin-left: 4%;
+    margin-top: 3%;
+}
+
+.person 
+{
+    font-size: 12px;
+    width: 100%;
+}
+
+.quote
+{
+    width: 100%;
+}
+
+#how-to-download-app
+{
+    background-image: url(../images/homebg.png);
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    margin-top: 5%;
+}
+
+#footer
+{
+    padding:0 10%;
+    background-color: #2F2F4F;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.download-text
+{
+    text-align: justify;
+    margin-left: 4%;
+    width: 28%;
+}
+
+.download-text > h1
+{
+    text-align: left;
+    width: 100%
+}
+
+.download-text > p
+{
+    text-align: left;
+    width: 85%
+}
+
+.download-text > img 
+{
+    width: 100px;
+}
+
+.download-img
+{
+    display: inline-block;
+    width: 65%;
+    text-align: center;
+}
+
+.download-img > img
+{
+    display: inline-block;
+    width: 55%;
+    margin-top: 1%;
+    vertical-align: bottom;
+}
+
+#footer-link
+{
+    width: 30%;
+    text-align: right;
+}
+
+#footer-logo
+{
+    margin-right: 1%;
+}
+
+#footer-bottom
+{
+    text-align: center;
+    padding: 1%;
+    box-sizing: border-box;
+    color: gray;
+}
