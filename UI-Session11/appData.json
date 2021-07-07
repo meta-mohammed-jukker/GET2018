@@ -1,0 +1,352 @@
+{
+  "cart": [],
+  "products": [
+    {
+      "id": 1,
+      "title": "Spinach",
+      "price": 2.5,
+      "imageUrl": "img/spinach.jpg",
+      "category": "Vegetables"
+    },
+    {
+      "id": 2,
+      "title": "Freshly Baked Bread",
+      "price": 3.5,
+      "imageUrl": "img/Bread.jpg",
+      "category": "Bread"
+    },
+    {
+      "id": 3,
+      "title": "Saffron",
+      "price": 4.5,
+      "imageUrl": "img/saffron.jpg",
+      "category": "Seasonings and Spice"
+    },
+    {
+      "id": 4,
+      "title": "Mango",
+      "price": 3,
+      "imageUrl": "img/mango.jpg",
+      "category": "Fruits"
+    },
+    {
+      "id": 5,
+      "title": "Butter",
+      "price": 5.5,
+      "imageUrl": "img/butter.jpg",
+      "category": "Dairy"
+    }
+  ],
+  "shipping": [
+    {
+      "id": 1,
+      "name": "shaktiman ;)",
+      "address1": "street 1",
+      "address2": "orleans road",
+      "city": "Jaipur"
+    }
+  ],
+  "orders": [
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 2.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        },
+        {
+          "id": 3,
+          "title": "Spice",
+          "price": 9,
+          "imageUrl": "img/spinach.jpg",
+          "count": 2
+        }
+      ],
+      "customerName": "John Snow",
+      "date": "10/17/2018",
+      "id": 1
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 2.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Bread",
+          "price": 3.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "khaleesi",
+      "date": "10/17/2018",
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 2.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Bread",
+          "price": 3.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        },
+        {
+          "id": 3,
+          "title": "Spice",
+          "price": 4.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "spiderman",
+      "date": "10/17/2018",
+      "id": 3
+    },
+    {
+      "items": [
+        {
+          "id": 4,
+          "title": "Mango",
+          "price": 3,
+          "imageUrl": "img/mango.jpg",
+          "count": 1
+        },
+        {
+          "id": 5,
+          "title": "Butter",
+          "price": 5.5,
+          "imageUrl": "img/butter.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "superman",
+      "date": "10/17/2018",
+      "id": 4
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 2.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "batman",
+      "date": "10/17/2018",
+      "id": 5
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 2.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        },
+        {
+          "id": 4,
+          "title": "Mango",
+          "price": 3,
+          "imageUrl": "img/mango.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "ironman",
+      "date": "2018-10-17",
+      "id": 6
+    },
+    {
+      "items": [
+        {
+          "id": 3,
+          "title": "Saffron",
+          "price": 108,
+          "imageUrl": "img/saffron.jpg",
+          "count": 4
+        },
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 2.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "JayZ",
+      "date": "10/17/2018",
+      "id": 7
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 2
+        },
+        {
+          "id": 4,
+          "title": "Mango",
+          "price": 3,
+          "imageUrl": "img/mango.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "marshmallow",
+      "date": "10/17/2018",
+      "id": 8
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 17.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 7
+        }
+      ],
+      "customerName": "no name",
+      "date": "10/18/2018",
+      "id": 9
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 2.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Freshly Baked Bread",
+          "price": 3.5,
+          "imageUrl": "img/Bread.jpg",
+          "count": 1
+        },
+        {
+          "id": 3,
+          "title": "Saffron",
+          "price": 4.5,
+          "imageUrl": "img/saffron.jpg",
+          "count": 1
+        },
+        {
+          "id": 4,
+          "title": "Mango",
+          "price": 3,
+          "imageUrl": "img/mango.jpg",
+          "count": 1
+        },
+        {
+          "id": 5,
+          "title": "Butter",
+          "price": 5.5,
+          "imageUrl": "img/butter.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "khali",
+      "date": "10/18/2018",
+      "id": 10
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 2.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Freshly Baked Bread",
+          "price": 3.5,
+          "imageUrl": "img/Bread.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "mohammed jukker",
+      "date": "10/18/2018",
+      "id": 11
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 2.5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Freshly Baked Bread",
+          "price": 7,
+          "imageUrl": "img/Bread.jpg",
+          "count": 2
+        },
+        {
+          "id": 3,
+          "title": "Saffron",
+          "price": 4.5,
+          "imageUrl": "img/saffron.jpg",
+          "count": 1
+        },
+        {
+          "id": 4,
+          "title": "Mango",
+          "price": 3,
+          "imageUrl": "img/mango.jpg",
+          "count": 1
+        }
+      ],
+      "customerName": "mohammed jukker",
+      "date": "10/18/2018",
+      "id": 12
+    },
+    {
+      "items": [
+        {
+          "id": 2,
+          "title": "Freshly Baked Bread",
+          "price": 3.5,
+          "imageUrl": "img/Bread.jpg",
+          "count": 1
+        },
+        {
+          "id": 1,
+          "title": "Spinach",
+          "price": 5,
+          "imageUrl": "img/spinach.jpg",
+          "count": 2
+        }
+      ],
+      "customerName": "shaktiman ;)",
+      "date": "10/22/2018",
+      "id": 13
+    }
+  ]
+}
