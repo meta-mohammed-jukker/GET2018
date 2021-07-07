@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<title>Sign Up</title>
+		
+		<script src="script/validation.js">
+		</script>
+	</head>
+
+	<body>
+	
+		<table width="75%" align="center">
+			<tr>
+				<td><img src="html5Logo.png" alt="HTML 5 image" width="50px"/></td>
+				<td align="right">
+					<a href="home.html">Home</a>
+					<a href="#">About</a>
+					<a href="#">Product</a>
+					<a href="#">Gallery</a>
+					<a href="contact.html">Contact</a>
+					<a href="login.html">Login</a>
+					<a href="signup.html">Sign Up</a>
+				</td> 
+			</tr>
+		</table>
+		<hr/>
+		
+		<div align="center">
+			<h1>Sign Up</h1>
+			
+			<form name="signupForm" method="post" action="info.html" onsubmit="return validateSignupForm()" >
+				<table>
+					<tr>
+						<td width="100px">
+						First Name:
+						</td>
+						<td>
+							<input type="text" name="firstName" placeholder="First Name" onkeyup="validateName(this)" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td width="100px">
+							Last Name:
+						</td>
+						<td>
+							<input type="text" name="lastName" placeholder="Last Name" onkeyup="validateName(this)" />
+						</td>
+					</tr>
+					
+					<tr>
+						<td width="100px">
+							Contact Number:
+						</td>
+						<td>
+							<input type="text" name="contactNumber" placeholder="Contact Number" onkeyup="validateContactNumber(this)" />
+						</td>
+					</tr>
+					
+					<tr>
+					<td width="100px">
+							Email:
+						</td>
+						<td>
+							<input id="email" type="email" name="email" placeholder="Email" onkeyup="validateEmail(this)" />
+						</td>
+					</tr>
+					
+					<tr>
+						<td width="100px">
+							Password:
+					</td>
+						<td>
+							<input id="password" type="password" name="password" placeholder="Password" onkeyup="validatePassword(this)" />
+						</td>
+					</tr>
+					
+					<tr>
+						<td width="100px">
+							Confirm Password:
+						</td>
+					<td>
+							<input id="confirmPassword" type="password" name="confirmPassword" placeholder='Password' 
+							onkeyup="checkPassword(document.getElementById('password'), this)" />
+						</td>
+					</tr>
+					
+					<tr>
+						<td width="100px">
+							Company / Institute:
+						</td>
+						<td>
+							<select id="company" name="company">
+								<option>Metacube</option>
+								<option>TCS</option>
+								<option>Infosys</option>
+								<option>Cognizant</option>
+								<option>Apple</option>
+							</select>
+						</td>
+					</tr>
+					
+					<tr>
+						<td width="100px">
+							<input type="submit" value="submit">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+	
+</html>
