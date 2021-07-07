@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="addJobDetailsForm" method="post" th:object="${jobDetails}"
+		th:action="@{addJobDetails}">
+		<table>
+			<tr>
+				<td><input type="hidden" th:field="*{id}" th:value="*{id}" />
+				</td>
+			</tr>
+			<tr>
+				<td>Employee Id:</td>
+				<td><input type="number" th:field="*{employeeId}"
+					th:value="*{employeeId}" /></td>
+			</tr>
+			<tr>
+				<td>Date Of Joining:</td>
+				<td><input type="Date" th:field="*{dateOfJoining}"
+					th:value="*{dateOfJoining}" id="dateOfJoining" name="dateOfJoining" /></td>
+			</tr>
+			<tr>
+				<td>Total Experience:</td>
+				<td><input type="number" th:field="*{experience}"
+					th:value="*{experience}" /></td>
+			</tr>
+			<tr>
+				<td>Job Id:</td>
+				<td><input type="number" th:field="*{jobId}"
+					th:value="*{jobId}" /></td>
+			</tr>
+			<tr>
+				<td>Reporting Manager:</td>
+				<td><input type="number" th:field="*{reportingManager}"
+					th:value="*{reportingManager}" /></td>
+			</tr>
+			<tr>
+				<td>Team Lead:</td>
+				<td><input type="number" th:field="*{teamLead}"
+					th:value="*{teamLead}" /></td>
+			</tr>
+			<tr>
+				<td>Current Project Id:</td>
+				<td><input type="number" th:field="*{projectId}"
+					th:value="*{projectId}" /></td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" value="submit" /></td>
+			</tr>
+
+		</table>
+	</form>
+</body>
+</html>

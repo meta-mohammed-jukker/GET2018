@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dashboard</title>
+</head>
+<body>
+	<h3>Projects</h3>
+	<a th:href="@{addProject}">Add Project</a>
+	<br /> Update:
+	<form name="updateProject" method="get" th:action="@{updateProject}">
+		Project Id: <input type="number" name="id" placeholder="Project Id" />
+		<input type="submit" value="update" />
+	</form>
+	<a th:href="@{showAllProjects}">Show All Projects</a>
+	<br /> Delete:
+	<form name="deleteProject" method="post" th:action="@{deleteProject}">
+		Project Id: <input type="number" name="id" placeholder="Project Id" />
+		<input type="submit" value="delete" />
+	</form>
+
+	<h3>Jobs</h3>
+	<a th:href="@{addJob}">Add Job</a>
+	<br /> Update:
+	<form name="updateJob" method="get" th:action="@{updateJob}">
+		Job Id: <input type="number" name="id" placeholder="Job Id" /> <input
+			type="submit" value="update" />
+	</form>
+	<a th:href="@{showAllJobs}">Show All Jobs</a>
+	<br /> Delete:
+	<form name="deleteJob" method="post" th:action="@{deleteJob}">
+		Job Id: <input type="number" name="id" placeholder="Job Id" /> <input
+			type="submit" value="delete" />
+	</form>
+
+	<h3>Skills</h3>
+	<a th:href="@{addSkill}">Add Skill</a>
+	<br /> Update:
+	<form name="updateSkill" method="get" th:action="@{updateSkill}">
+		Skill Id: <input type="number" name="id" placeholder="Skill Id" /> <input
+			type="submit" value="update" />
+	</form>
+	<a th:href="@{showAllSkills}">Show All Skills</a>
+	<br /> Delete:
+	<form name="deleteSkill" method="post" th:action="@{deleteSkill}">
+		Skill Id: <input type="number" name="id" placeholder="Skill Id" /> <input
+			type="submit" value="delete" />
+	</form>
+	Get List of employee with skill:
+	<form name="EmployeeListWithSameSkillForm" method="post"
+		th:action="@{getEmployeeListWithSameSkill}">
+		Skill Id: <input type="number" name="id" placeholder="Skill Id" /> <input
+			type="submit" value="get List" />
+	</form>
+
+	<h3>Employee</h3>
+	<a th:href="@{addEmployee}">Add Employee</a>
+	<br /> Update:
+	<form name="updateEmployee" method="get" th:action="@{updateEmployee}">
+		Employee Id: <input type="number" name="id" placeholder="Employee Id" />
+		<input type="submit" value="update" />
+	</form>
+	<a th:href="@{showAllEmployees}">Show All Employees</a>
+	<br /> Delete:
+	<form name="deleteEmployee" method="post" th:action="@{deleteEmployee}">
+		Employee Id: <input type="number" name="id" placeholder="Employee Id" />
+		<input type="submit" value="delete" />
+	</form>
+	<a th:href="@{addSkillToEmployee}">Add Skill to Employee</a>
+	<br />
+	<a th:href="@{showAllEmployeeSkillMappings}">Show All Employee
+		Skill Mappings</a>
+
+	<h3>Job details</h3>
+	<a th:href="@{addJobDetails}">Add Job details</a>
+	<br /> Update:
+	<form name="updateJobDetails" method="get"
+		th:action="@{updateJobDetails}">
+		Job Detail Id: <input type="number" name="id"
+			placeholder="Job Detail Id" /> <input type="submit" value="update" />
+	</form>
+	<a th:href="@{showAllJobDetails}">Show All Job Details</a>
+	<br /> Delete:
+	<form name="deleteJobDetails" method="post"
+		th:action="@{deleteJobDetails}">
+		Job Detail Id: <input type="number" name="id"
+			placeholder="Job Detail Id" /> <input type="submit" value="delete" />
+	</form>
+
+	<hr />
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="LogOut" />
+	</form>
+</body>
+</html>
